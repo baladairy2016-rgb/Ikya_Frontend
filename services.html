@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>:: Oreo Hospital :: Services</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- start linking -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/aos/aos.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Material Design Iconic Font CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
+
+</head>
+<style>
+#departmentMenu {
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+width: 500px; /* or increase if needed */
+/* padding: 10px; */
+background-color: #fff;
+}
+
+#departmentMenu .dropdown-item {
+    flex: 0 0 10%; /* Each item gets 10% of row (so 10 per row) */
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: left;
+    padding: 5px;
+    min-width: 70px; /* Optional: prevent too narrow */
+}
+
+
+
+.choose-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* turns any dark icon white */
+}
+
+.default-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+.what-we-box {
+  /* display: flex; */
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.icon-wrapper {
+  flex-shrink: 0; /* keeps icon size fixed */
+}
+
+
+
+    .text-justify{
+        text-align: justify;
+    }
+     .service-section{
+        padding-top: 0px !important;
+     }
+    .service-section .container{
+        padding: 50px 0px;
+    }
+   .siver-content{
+    border:1.5px solid #e1e1e1;
+    padding: 15px 10px;
+    color:black;
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.4); */
+   box-shadow: 1px 1px 5px 1px rgba(0, 95, 153, 0.6);
+
+
+
+   }
+   .siver-content img {
+    width:110px;
+    height:110px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.5);;
+   }
+   .service p{
+    margin-bottom: 0px;
+   }
+    .service h5{
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+    
+    .service img{
+        width:100%;
+        height:100%;
+    }
+    .bg-bluer{ 
+    background-color: #005f99; 
+    color:white;
+}
+.what-we-do .what-we-box h6{
+    color:white;
+}
+</style>
+<body>
+<div class="wrapper">
+    <!-- start loading -->
+    <div id="loading">
+        <p>pleas wait page loading ...</p>
+    </div>
+ <div id="header-placeholder"></div>
+    <!-- start hero -->
+    <section id="hero">
+        <div class="inner-banner" style="background-image:url(assets/images/banner-service.jpg)">
+            <div class="container">
+                <h3 class="title">Service<br><big>IKYA <strong>Hospital</strong></big></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="main-section">
+
+        <!-- About Us Section -->
+        <div class="service-section x">
+            <div class="xl-slategray">
+<div class="container">
+                <div class="row">
+                 
+                </div>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-5 col-sm-12">
+                        <div class="service-cnt">
+                               <div class="section-title col-12" data-aos="fade-right">
+                        <h2> <span>Our Expertise </span>at a Glance</h2>
+                     
+                    </div>
+                            <p class="text-justify">We offer a range of professional services tailored to meet diverse needs. Each solution is delivered with precision, care, and a focus on results. Our team combines experience with innovation to ensure excellence. Explore what we can do to make a meaningful impact for you.
+
+</p>
+<a class="btn btn-primary btn-round aos-init aos-animate" data-aos="flip-up" href="#">Book  an Appointment</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                   <div class="text-center">
+                    <img src="assets/images/servies.png" width="90%" alt="">
+                   </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        <!-- About Us Section -->
+
+          <!-- <section>
+            <div class="container">
+
+                      <div class="section-title col-12 p-0" data-aos="fade-right">
+                        <h2> <span> Services </span>Offered</h2>
+                     
+                    </div>
+                <div class="row g-1 mt-4">
+                    <div class="col-lg-6">
+                <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Advanced Laparoscopic & Microscopic Surgeries</h5>
+                         <p>Precision surgeries with minimal invasion for faster recovery and better outcomes.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                       <div class="col-lg-6">
+                       <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>High-End Endoscopy & ERCP</h5>
+                         <p>Advanced digestive diagnostics and treatments with expert care and latest technology.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+
+                        <div class="col-lg-6">
+                <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Brain & Spine Surgical Care</h5>
+                         <p>Expert neurosurgical solutions with cutting-edge technology and compassionate care.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                       <div class="col-lg-6">
+                       <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Kidney & Liver Transplants</h5>
+                         <p>Life-saving transplants backed by expertise, precision, and comprehensive support.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+
+                        <div class="col-lg-6">
+                <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Interventional Radiology</h5>
+                         <p>Minimally invasive treatments using advanced imaging for faster, safer recovery.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                       <div class="col-lg-6">
+                       <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Pain Management</h5>
+                         <p>Effective, personalized pain relief focusing on long-term wellness and quality of life.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+
+                        <div class="col-lg-6">
+                <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Physiotherapy & Rehabilitation</h5>
+                         <p>Tailored recovery programs to restore strength, mobility, and independence.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                       <div class="col-lg-6">
+                       <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Psychology Counseling</h5>
+                         <p>Compassionate mental health support for a balanced, fulfilling life.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                        <div class="col-lg-6">
+                <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Male & Female Infertility</h5>
+                         <p>Comprehensive fertility care combining advanced science with emotional support.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                       <div class="col-lg-6">
+                       <div class="row p-2">
+                   <div class="siver-content d-flex">
+                        <div class="service col-lg-9">
+                        <div>
+                             <h5>Plastic, Endovascular & Laser Surgeries</h5>
+                         <p>Advanced surgical care for health, aesthetics, and renewed confidence.</p>
+                        </div>
+                       </div>
+                       <div class="col-lg-3">
+                        <img src="assets/images/blog-1.png" class="rounded-class" alt="">
+                       </div>
+                   </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+          </section> -->
+<section>
+<div class="container">
+<div class="section-title col-12 p-0" data-aos="fade-right">
+<h2><span>Services</span> Offered</h2>
+</div>
+<div class="row g-1 mt-4" id="servicesSection">
+<!-- Dynamic services will be injected here -->
+</div>
+</div>
+</section>
+
+
+
+
+
+
+       <!-- Why choose us -->
+        <!-- <div class="what-we-do bg-bluer">
+            <div class="container ">
+                <div class="row">
+                    <div class="section-title col-12" data-aos="fade-right">
+                        <h2 class="text-white"><span>Why </span>Choose Us</h2>
+                     
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 text-white">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-account-add text-white"></i>
+                            <h6 class="text-white">Patient-Centered Design </h6>
+                            <p class="text-white">We maintain clear communication, ethical practices, and transparency in treatment and billing, so patients feel confident and informed at every step.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-collection-add text-white"></i>
+                            <h6 class="text-white">Innovation & Efficiency</h6>
+                            <p class="text-white">We use modern medical technologies and optimized workflows to deliver fast, accurate, and effective care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-hospital-alt text-white"></i>
+                            <h6 class="text-white">Community & Accessibility</h6>
+                            <p class="text-white">IKYA Hospital provides affordable, inclusive healthcare and outreach programs to serve diverse communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-thumb-up text-white"></i>
+                            <h6 class="text-white">Highly Skilled Staff</h6>
+                            <p class="text-white">Our experienced and compassionate team ensures patients receive the highest standard of care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-headset-mic text-white"></i>
+                            <h6 class="text-white">Holistic Healthcare</h6>
+                            <p class="text-white">We focus on treatment, preventive care, wellness programs, and patient education to support long-term health.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-shield-check text-white"></i>
+                            <h6 class="text-white">Transparent & Trustworthy</h6>
+                            <p class="text-white">Clear communication, ethical practices, and transparency help patients feel confident and informed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+         <div class="what-we-do bg-bluer">
+            <div class="container ">
+                <div class="row">
+                <div class="section-title col-12" data-aos="fade-right">
+                    <h2 class="text-white"><span>Why </span>Choose Us</h2>
+                </div>
+                </div>
+                <div class="row" id="chooseUsContainer">
+                <!-- Dynamic services will appear here -->
+                </div>
+            </div>
+    </div>
+        <!-- Why choose us -->
+
+   
+
+        <!-- Services List -->
+        <!-- <div class="department-list services-list">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title col-12" data-aos="fade-right">
+                        <h2><span>Most </span>Popular Services</h2>
+                        <p>Description text here...</p>
+                    </div>
+                </div>
+                <div class="row" data-aos="flip-up">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-1.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Routine CheckUp</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-2.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Medical Counseling</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-3.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Medicine Research</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="department-list services-list">
+        <div class="container">
+        <div class="row">
+        <div class="section-title col-12" data-aos="fade-right">
+        <h2><span>Most </span>Popular Services</h2>
+        <p>Description text here...</p>
+        </div>
+        </div>
+        <div class="row" id="popularServices" data-aos="flip-up">
+        <!-- Dynamic popular services will be injected here -->
+        </div>
+        </div>
+        </div>
+        <!-- Services List -->
+
+    </section>
+
+    <!-- start footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <button class="btn btn-primary btn-round btn-block margin-0">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-4 col-md-12">
+                    <div class="fcard about">
+                        <h5 class="title">About Hospitals</h5>
+                        <p>The relentless service of Hospitals in the past 25 years taken health care to the most modern
+                            levels in the region catering to urban & rural.</p>
+                        <p>A Health Care Provider of Western Approach, Hospitals is the most trusted multispecialty
+                            hospital.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard links">
+                        <h5 class="title">Usefull Links</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="javascript:void(0);">Consultants</a></li>
+                                    <li><a href="javascript:void(0);">Working Hours</a></li>
+                                    <li><a href="javascript:void(0);">Procedures</a></li>
+                                    <li><a href="javascript:void(0);">Special Offers</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:void(0);">Services</a></li>
+                                    <li><a href="javascript:void(0);">Healthy Foods</a></li>
+                                    <li><a href="javascript:void(0);">Appointments</a></li>
+                                    <li><a href="javascript:void(0);">Latest News</a></li>
+                                    <li><a href="javascript:void(0);">Certificates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard contact links">
+                        <h5 class="title">Contact Details</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="zmdi zmdi-pin"></i>Park Drive, Varick Str NY 10012, USA</li>
+                            <li><i class="zmdi zmdi-email"></i>Getwell@Hospitals.com</li>
+                            <li><i class="zmdi zmdi-phone"></i>(123) 0200 12345 & 7890</li>
+                            <li><i class="zmdi zmdi-time"></i>Mon-Friday: 9am to 18pm</li>
+                            <li><i class="zmdi zmdi-time"></i>Sat-Sunday: 10am to 16pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <small>Copyright &copy; 2018 Oreo Theme by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a>
+                        </small>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="up"><a href="services.html#header"><i class="zmdi zmdi-caret-up-circle"></i></a></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="social float-md-right"><a href="services.html"><i class="zmdi zmdi-facebook m-r-10"></i></a> <a
+                                href="services.html"><i class="zmdi zmdi-twitter m-r-10"></i></a> <a href="services.html"><i
+                                class="zmdi zmdi-dribbble m-r-10"></i></a> <a href="services.html"><i
+                                class="zmdi zmdi-behance m-r-10"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- start screpting -->
+<script src="assets/bundles/libscripts.bundle.js"></script>
+<script src="assets/js/app.js"></script><!-- my js -->
+<script>
+  // Load header.html into the page
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error loading header:', err));
+</script>
+
+<script>
+const API_BASE = "http://localhost:8081/Services";
+
+async function loadServices() {
+  try {
+    const res = await fetch(API_BASE + "/all");
+    const data = await res.json();
+    const container = document.getElementById("servicesSection");
+    container.innerHTML = "";
+
+    data.forEach(service => {
+      // Only display services where popularService = 0
+      if (service.popularService === 0) {
+        const col = document.createElement("div");
+        col.className = "col-lg-6";
+        col.innerHTML = `
+          <div class="row p-2">
+            <div class="siver-content d-flex">
+              <div class="service col-lg-9">
+                <div>
+                  <h5>${service.serviceName}</h5>
+                  <p>${service.description}</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <img src="http://localhost:8081${service.image}" class="rounded-class" alt="${service.serviceName}">
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      }
+    });
+  } catch (err) {
+    console.error("Error loading services:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadServices);
+
+
+const API = "http://localhost:8081/Services";
+
+
+async function loadPopularServices() {
+try {
+const res = await fetch(API + "/all");
+const data = await res.json();
+const container = document.getElementById("popularServices");
+container.innerHTML = "";
+
+
+data.forEach(service => {
+if(service.popularService === 1) { // Only popular services
+const col = document.createElement("div");
+col.className = "col-md-4 col-sm-6";
+col.innerHTML = `
+<div class="department-box box-img-cnt">
+<div class="box-img"><img src="http://localhost:8081${service.image}" alt="${service.serviceName}"></div>
+<div class="box-cnt">
+<h4>${service.serviceName}</h4>
+<p>${service.description.length > 80 ? service.description.substring(0, 80) + '...' : service.description}</p>
+<a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+</div>
+</div>
+`;
+container.appendChild(col);
+}
+});
+} catch(err) {
+console.error("Error loading popular services:", err);
+}
+}
+
+
+document.addEventListener("DOMContentLoaded", loadPopularServices);
+
+
+
+ const chooseUs = "http://localhost:8081/WhyChooseUs";
+
+document.addEventListener("DOMContentLoaded", loadChooseUs);
+
+async function loadChooseUs() {
+  try {
+    const res = await fetch(chooseUs + "/all");
+    const data = await res.json();
+    const container = document.getElementById("chooseUsContainer");
+    container.innerHTML = "";
+
+data.forEach((s) => {
+  container.innerHTML += `
+    <div class="col-md-4 col-sm-6">
+      <div class="what-we-box text-white d-flex align-items-start" data-aos="fade-right" data-aos-duration="5000">
+        
+        <div class="icon-wrapper me-3">
+          ${
+            s.icon
+              ? `<img src="http://localhost:8081${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
+              : `<i class="zmdi zmdi-star default-icon"></i>`
+          }
+        </div>
+
+        <div>
+          <h6 class="text-white">${s.serviceName}</h6>
+          <p class="text-white">${s.description}</p>
+        </div>
+
+      </div>
+    </div>
+  `;
+});
+
+
+  } catch (err) {
+    console.error("Error loading Why Choose Us:", err);
+  }
+}
+
+
+
+ 
+const deptMenu = "http://localhost:8081/Specialities";
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadDepartments();
+});
+
+async function loadDepartments() {
+    try {
+        const res = await fetch(`${deptMenu}/all`);
+        if (!res.ok) throw new Error("Failed to fetch departments");
+
+        const departments = await res.json();
+        const menu = document.getElementById("departmentMenu");
+        menu.innerHTML = "";
+
+        if (!departments || departments.length === 0) {
+            menu.innerHTML = `<span class="dropdown-item text-muted">No Departments Found</span>`;
+            return;
+        }
+
+        departments.forEach(dept => {
+            menu.innerHTML += `
+                <a class="dropdown-item" href="department.html?id=${dept.id}">
+                    ${dept.title}
+                </a>
+            `;
+        });
+
+    } catch (err) {
+        console.error("Error loading departments:", err);
+        document.getElementById("departmentMenu").innerHTML = `<span class="dropdown-item text-danger">Error loading departments</span>`;
+    }
+}
+
+</script>
+</body>
+</html>

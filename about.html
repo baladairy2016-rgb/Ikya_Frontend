@@ -1,0 +1,552 @@
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>:: Oreo Hospital :: About</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- start linking -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/aos/aos.min.css">
+    <link rel="stylesheet" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<style>
+#departmentMenu {
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+width: 500px; /* or increase if needed */
+/* padding: 10px; */
+background-color: #fff;
+}
+
+#departmentMenu .dropdown-item {
+    flex: 0 0 10%; /* Each item gets 10% of row (so 10 per row) */
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: left;
+    padding: 5px;
+    min-width: 70px; /* Optional: prevent too narrow */
+}
+
+
+
+.choose-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* turns any dark icon white */
+}
+
+.default-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+.what-we-box {
+  /* display: flex; */
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.icon-wrapper {
+  flex-shrink: 0; /* keeps icon size fixed */
+}
+
+
+
+    .text-justify{
+    text-align:justify;
+}
+.about-page p{
+    margin-bottom: 0px;
+}
+.about-page{
+    width:250px;
+     height:100px;
+    background-color: #00cfd1;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+}
+.counter{
+    gap:50px;
+    margin-top:50px;
+}
+.bg-bluer{ 
+    background-color: #005f99; 
+    color:white;
+}
+.what-we-do .what-we-box h6{
+    color:white;
+}
+</style>
+<body>
+<div class="wrapper">
+    <!-- start loading -->
+    <div id="loading">
+        <p>pleas wait page loading ...</p>
+    </div>
+
+     <div id="header-placeholder"></div>
+     
+    <!-- start hero -->
+    <section id="hero">
+        <div class="inner-banner" style="background-image:url(assets/images/banner-about.jpg)">
+            <div class="container">
+                <h3 class="title">About Us<br><big>IKYA <strong>Hospital</strong></big></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="main-section">
+
+        <!-- About Us Section -->
+        <div class="about-us-section" id="aboutUsSection">
+            <!-- Content will be injected dynamically -->
+        </div>
+
+        <!-- About Us Section -->
+
+        <!-- Why choose us -->
+        <!-- <div class="what-we-do bg-bluer">
+            <div class="container ">
+                <div class="row">
+                    <div class="section-title col-12" data-aos="fade-right">
+                        <h2 class="text-white"><span>Why </span>Choose Us</h2>
+                     
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 text-white">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-account-add text-white"></i>
+                            <h6 class="text-white">Patient-Centered Design </h6>
+                            <p class="text-white">We maintain clear communication, ethical practices, and transparency in treatment and billing, so patients feel confident and informed at every step.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-collection-add text-white"></i>
+                            <h6 class="text-white">Innovation & Efficiency</h6>
+                            <p class="text-white">We use modern medical technologies and optimized workflows to deliver fast, accurate, and effective care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-hospital-alt text-white"></i>
+                            <h6 class="text-white">Community & Accessibility</h6>
+                            <p class="text-white">IKYA Hospital provides affordable, inclusive healthcare and outreach programs to serve diverse communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-thumb-up text-white"></i>
+                            <h6 class="text-white">Highly Skilled Staff</h6>
+                            <p class="text-white">Our experienced and compassionate team ensures patients receive the highest standard of care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-headset-mic text-white"></i>
+                            <h6 class="text-white">Holistic Healthcare</h6>
+                            <p class="text-white">We focus on treatment, preventive care, wellness programs, and patient education to support long-term health.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="what-we-box" data-aos="fade-right" data-aos-duration="5000">
+                            <i class="zmdi zmdi-shield-check text-white"></i>
+                            <h6 class="text-white">Transparent & Trustworthy</h6>
+                            <p class="text-white">Clear communication, ethical practices, and transparency help patients feel confident and informed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="what-we-do bg-bluer">
+            <div class="container ">
+                <div class="row">
+                <div class="section-title col-12" data-aos="fade-right">
+                    <h2 class="text-white"><span>Why </span>Choose Us</h2>
+                </div>
+                </div>
+                <div class="row" id="chooseUsContainer">
+                <!-- Dynamic services will appear here -->
+                </div>
+            </div>
+    </div>
+
+        <!-- Why choose us -->
+
+    
+        <!-- Fun Fact -->
+
+        <!-- Our Location 
+        <div class="our_location">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="section-title col-4" data-aos="fade-right">
+                        <h2><span>Our </span>Location</h2>
+                        <p>Description text here...</p>
+                    </div>
+                    <div class="section-title col-7" data-aos="fade-left">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div id="world-map-markers" style="height:380px;"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">                        
+                        <ul class="row location_list list-unstyled">
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-turquoise">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="453" data-speed="2500" data-fresh-interval="700">453</h4>
+                                    <span>America</span>
+                                </div>
+                            </li>
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-khaki">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="124" data-speed="2500" data-fresh-interval="700">124</h4>
+                                    <span>Australia</span>
+                                </div>
+                            </li>
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-parpl">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="215" data-speed="2500" data-fresh-interval="700">215</h4>
+                                    <span>Canada</span>
+                                </div>
+                            </li>
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-salmon">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="155" data-speed="2500" data-fresh-interval="700">155</h4>
+                                    <span>India</span>
+                                </div>
+                            </li>
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-blue">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="78" data-speed="2500" data-fresh-interval="700">78</h4>
+                                    <span>UK</span>
+                                </div>
+                            </li>
+                            <li class="col-lg-2 col-md-4 col-6">
+                                <div class="body xl-slategray">
+                                    <i class="zmdi zmdi-pin"></i>
+                                    <h4 class="counter timer" data-from="0" data-to="55" data-speed="2500" data-fresh-interval="700">55</h4>
+                                    <span>Other</span>
+                                </div>
+                            </li>                      
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Our Location -->
+
+        <!-- Our Team -->
+                 <div class="our-team">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="section-title left col-lg-4" data-aos="fade-up">
+        <h2><span>Meet </span>Our Team</h2>
+      </div>
+      <div class="section-title right col-lg-8" data-aos="fade-up">
+        <p><span class="color-212121">Ikya Hospital</span> The wise man therefore always holds in these
+          matters to this principle of selection: he rejects pleasures to secure.</p>
+      </div>
+    </div>
+    <div class="row" id="teamContainer">
+      <!-- Team members will be injected here -->
+    </div>
+  </div>
+</div>
+        <!-- Our Team -->
+
+    </section>
+
+    <!-- start footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <button class="btn btn-primary btn-round btn-block margin-0">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-4 col-md-12">
+                    <div class="fcard about">
+                        <h5 class="title">About Hospitals</h5>
+                        <p>The relentless service of Hospitals in the past 25 years taken health care to the most modern
+                            levels in the region catering to urban & rural.</p>
+                        <p>A Health Care Provider of Western Approach, Hospitals is the most trusted multispecialty
+                            hospital.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard links">
+                        <h5 class="title">Usefull Links</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="javascript:void(0);">Consultants</a></li>
+                                    <li><a href="javascript:void(0);">Working Hours</a></li>
+                                    <li><a href="javascript:void(0);">Procedures</a></li>
+                                    <li><a href="javascript:void(0);">Special Offers</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:void(0);">Services</a></li>
+                                    <li><a href="javascript:void(0);">Healthy Foods</a></li>
+                                    <li><a href="javascript:void(0);">Appointments</a></li>
+                                    <li><a href="javascript:void(0);">Latest News</a></li>
+                                    <li><a href="javascript:void(0);">Certificates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard contact links">
+                        <h5 class="title">Contact Details</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="zmdi zmdi-pin"></i>Park Drive, Varick Str NY 10012, USA</li>
+                            <li><i class="zmdi zmdi-email"></i>Getwell@Hospitals.com</li>
+                            <li><i class="zmdi zmdi-phone"></i>(123) 0200 12345 & 7890</li>
+                            <li><i class="zmdi zmdi-time"></i>Mon-Friday: 9am to 18pm</li>
+                            <li><i class="zmdi zmdi-time"></i>Sat-Sunday: 10am to 16pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <small>Copyright &copy; 2018 Oreo Theme by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a>
+                        </small>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="up"><a href="about.html#header"><i class="zmdi zmdi-caret-up-circle"></i></a></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="social float-md-right"><a href="about.html"><i class="zmdi zmdi-facebook m-r-10"></i></a> <a
+                                href="about.html"><i class="zmdi zmdi-twitter m-r-10"></i></a> <a href="about.html"><i
+                                class="zmdi zmdi-dribbble m-r-10"></i></a> <a href="about.html"><i
+                                class="zmdi zmdi-behance m-r-10"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- start screpting -->
+<script src="assets/bundles/libscripts.bundle.js"></script>
+
+<script src="assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+
+<script src="assets/js/app.js"></script><!-- my js -->
+<script src="assets/js/countto.js"></script>
+<script src="assets/js/jvectormap.js"></script>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+
+    const aboutApi = "http://localhost:8081/About/all";
+
+async function loadAboutUs() {
+    try {
+        const res = await fetch(aboutApi);
+        if (!res.ok) throw new Error("Failed to fetch About Us data");
+        const data = await res.json();
+
+        if (!data || data.length === 0) return;
+
+        // Use first record (or modify if you want multiple)
+        const about = data[0];
+
+        const container = document.getElementById("aboutUsSection");
+
+        container.innerHTML = `
+        <div class="container">
+            <div class="row">
+                <div class="section-title col-12" data-aos="fade-right">
+                    <h2><span>${about.title}</span></h2>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-md-4 col-sm-6">
+                    <div class="box-img box-shadow" data-aos="fade-up">
+                        <img src="http://localhost:8081${about.image}" alt="${about.title}">
+                       
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-6">
+                    <div class="page-text">
+                        <div class="section-top" data-aos="fade-up" data-aos-duration="4000">
+                            <p id="about-title">${about.subTitle || ''}</p>
+                        </div>
+                        <p data-aos="fade-up" data-aos-duration="4000" class="text-justify">
+                            ${about.description.split("\\r\\n").join("<br>")}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    } catch (err) {
+        console.error("Error loading About Us section:", err);
+    }
+}
+
+// Load About Us section after DOM is ready
+document.addEventListener("DOMContentLoaded", loadAboutUs);
+
+
+
+
+  const API_BASE = "http://localhost:8081/WhyChooseUs";
+
+document.addEventListener("DOMContentLoaded", loadChooseUs);
+
+async function loadChooseUs() {
+  try {
+    const res = await fetch(API_BASE + "/all");
+    const data = await res.json();
+    const container = document.getElementById("chooseUsContainer");
+    container.innerHTML = "";
+
+data.forEach((s) => {
+  container.innerHTML += `
+    <div class="col-md-4 col-sm-6">
+      <div class="what-we-box text-white d-flex align-items-start" data-aos="fade-right" data-aos-duration="5000">
+        
+        <div class="icon-wrapper me-3">
+          ${
+            s.icon
+              ? `<img src="http://localhost:8081${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
+              : `<i class="zmdi zmdi-star default-icon"></i>`
+          }
+        </div>
+
+        <div>
+          <h6 class="text-white">${s.serviceName}</h6>
+          <p class="text-white">${s.description}</p>
+        </div>
+
+      </div>
+    </div>
+  `;
+});
+
+
+  } catch (err) {
+    console.error("Error loading Why Choose Us:", err);
+  }
+}
+
+
+ 
+const deptMenu = "http://localhost:8081/Specialities";
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadDepartments();
+});
+
+async function loadDepartments() {
+    try {
+        const res = await fetch(`${deptMenu}/all`);
+        if (!res.ok) throw new Error("Failed to fetch departments");
+
+        const departments = await res.json();
+        const menu = document.getElementById("departmentMenu");
+        menu.innerHTML = "";
+
+        if (!departments || departments.length === 0) {
+            menu.innerHTML = `<span class="dropdown-item text-muted">No Departments Found</span>`;
+            return;
+        }
+
+        departments.forEach(dept => {
+            menu.innerHTML += `
+                <a class="dropdown-item" href="department.html?id=${dept.id}">
+                    ${dept.title}
+                </a>
+            `;
+        });
+
+    } catch (err) {
+        console.error("Error loading departments:", err);
+        document.getElementById("departmentMenu").innerHTML = `<span class="dropdown-item text-danger">Error loading departments</span>`;
+    }
+}
+
+
+
+const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)'); // the row holding team members
+
+  function loadTeam() {
+    fetch('http://localhost:8081/doctors/all')
+      .then(res => res.json())
+      .then(data => {
+        teamContainer.innerHTML = ""; // clear existing static members
+        // take only first 4 doctors
+        data.slice(0, 4).forEach((doc, i) => {
+          const duration = 3000 + i * 1000; // same animation logic
+          teamContainer.innerHTML += `
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${duration}">
+                <div class="doctor-pic">
+                  <img src="http://localhost:8081${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
+                </div>
+                <div class="doctor-info">
+                  <h4>${doc.doctorName} <span>${doc.specialization || ''}</span></h4>
+                  <ul class="clearfix">
+                    ${doc.facebook ? `<li><a href="${doc.facebook}" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>` : ''}
+                    ${doc.twitter ? `<li><a href="${doc.twitter}" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>` : ''}
+                    ${doc.instagram ? `<li><a href="${doc.instagram}" target="_blank"><i class="zmdi zmdi-instagram"></i></a></li>` : ''}
+                    ${doc.googlePlus ? `<li><a href="${doc.googlePlus}" target="_blank"><i class="zmdi zmdi-google-plus"></i></a></li>` : ''}
+                  </ul>
+                  <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      })
+      .catch(err => console.error("Failed to load team:", err));
+  }
+
+  document.addEventListener("DOMContentLoaded", loadTeam);
+</script>
+</body>
+</html>

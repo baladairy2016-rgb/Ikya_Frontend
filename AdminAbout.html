@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage About Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0 20px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1f2937;
+      margin: 20px 0;
+      font-size: 28px;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 20px auto;
+      transition: transform 0.2s;
+    }
+    form:hover {
+      transform: translateY(-2px);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #1f2937;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border: 1px solid #007bff;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 18px;
+      border: none;
+      background: #007bff;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    input[type="file"] {
+      padding: 6px;
+    }
+
+    #imageFilePreview {
+      display: none;
+      margin-top: 10px;
+      max-width: 150px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      overflow-x: auto;
+      max-width: 1000px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #007bff;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+      background: #f1f5f9;
+    }
+
+    img {
+      max-width: 100px;
+      border-radius: 6px;
+      height: auto;
+    }
+
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      margin: 2px;
+      transition: transform 0.2s;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .edit { background: #ffc107; color: #000; }
+    .delete { background: #dc3545; color: #fff; }
+  </style>
+</head>
+<body>
+
+<h2>Manage About Us</h2>
+
+<!-- Form -->
+<form id="serviceForm">
+  <input type="hidden" id="serviceId">
+
+  <label>Title:</label>
+  <input type="text" id="title" required>
+
+  <label>Sub Title:</label>
+  <input type="text" id="subTitle" required>
+
+  <label>Description:</label>
+  <textarea id="description" rows="5" required></textarea>
+
+  <label>Upload Image:</label>
+  <input type="file" id="imageFile" accept="image/*">
+  <img id="imageFilePreview">
+
+  <button type="submit">Submit</button>
+</form>
+
+<!-- Table -->
+<div class="table-container">
+  <table id="servicesTable">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Sub Title</th>
+        <th>Description</th>
+        <th>Created On</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="servicesContainer"></tbody>
+  </table>
+</div>
+
+<script>
+  const api = "http://localhost:8081/About";
+
+  // Image preview
+  document.getElementById("imageFile").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const preview = document.getElementById("imageFilePreview");
+        preview.src = ev.target.result;
+        preview.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  async function loadServices() {
+    const res = await fetch(`${api}/all`);
+    const services = await res.json();
+    const container = document.getElementById("servicesContainer");
+    container.innerHTML = "";
+
+    // Only ACTIVE services (if needed)
+    const activeServices = services.filter(s => s.status !== "INACTIVE");
+
+    activeServices.forEach((s, i) => {
+      const createdDate = s.createdOn 
+        ? new Date(s.createdOn).toISOString().split("T")[0] 
+        : "";
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${i + 1}</td>
+        <td><img src="http://localhost:8081${s.image}" alt="${s.title}"></td>
+        <td>${s.title}</td>
+        <td>${s.subTitle || ""}</td>
+        <td>${s.description}</td>
+        <td>${createdDate}</td>
+        <td>
+          <button class="action-btn edit" data-id="${s.id}" 
+                  data-title="${s.title.replace(/"/g,'&quot;')}" 
+                  data-subtitle="${s.subTitle || ''}" 
+                  data-desc="${s.description.replace(/"/g,'&quot;')}"
+                  onclick="editService(this)">Edit</button>
+          <button class="action-btn delete" onclick="deleteService(${s.id})">Delete</button>
+        </td>
+      `;
+      container.appendChild(row);
+    });
+  }
+
+  document.getElementById("serviceForm").onsubmit = async (e) => {
+    e.preventDefault();
+    const id = document.getElementById("serviceId").value;
+    const fd = new FormData();
+    fd.append("title", document.getElementById("title").value);
+    fd.append("subTitle", document.getElementById("subTitle").value);
+    fd.append("description", document.getElementById("description").value);
+    const file = document.getElementById("imageFile").files[0];
+    if (file) fd.append("imageFile", file);
+
+    const url = id ? `${api}/update/${id}` : `${api}/add`;
+    const method = id ? "PUT" : "POST";
+
+    const res = await fetch(url, { method, body: fd });
+    if (res.ok) {
+      alert(id ? "Service updated!" : "Service added!");
+      document.getElementById("serviceForm").reset();
+      document.getElementById("imageFilePreview").style.display = "none";
+      document.getElementById("serviceId").value = "";
+      loadServices();
+    } else {
+      alert("Error saving service");
+    }
+  };
+
+  function editService(btn) {
+    const id = btn.getAttribute("data-id");
+    document.getElementById("serviceId").value = id;
+    document.getElementById("title").value = btn.getAttribute("data-title");
+    document.getElementById("subTitle").value = btn.getAttribute("data-subtitle");
+    document.getElementById("description").value = btn.getAttribute("data-desc");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  async function deleteService(id) {
+    if (!confirm("Are you sure to delete this service?")) return;
+    const res = await fetch(`${api}/delete/${id}`, { method: "DELETE" });
+    if (res.ok) loadServices();
+    else alert("Delete failed!");
+  }
+
+  loadServices();
+</script>
+</body>
+</html>

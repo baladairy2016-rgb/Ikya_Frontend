@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Admin Panel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', Arial, sans-serif; display: flex; min-height: 100vh; background: #f4f6f8; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #1a2634;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      transition: width 0.3s;
+    }
+    .sidebar h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      padding: 15px 0;
+      background: #16202a;
+    }
+    .sidebar ul { list-style: none; flex: 1; overflow-y: auto; }
+    .sidebar li { margin: 8px 0; }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .sidebar a i { margin-right: 12px; font-size: 1.1rem; }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #2a3b4c;
+      color: #00bcd4;
+      transform: translateX(5px);
+    }
+    .sidebar::-webkit-scrollbar { width: 6px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+
+    /* Content */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      height: 100vh;
+      overflow: hidden;
+      background: #f4f6f8;
+      transition: margin-left 0.3s;
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 40px);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .sidebar { width: 60px; }
+      .sidebar h2 { display: none; }
+      .sidebar a span { display: none; }
+      .content { margin-left: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="#" onclick="showPage('Slider.html', this)"><i class="fa fa-sliders-h"></i> <span>Slider Setup</span></a></li>
+      <li><a href="#" onclick="showPage('AdminAbout.html', this)"><i class="fa fa-info-circle"></i> <span>About Us Setup</span></a></li>
+      <li><a href="#" onclick="showPage('Appointment.html', this)"><i class="fa fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+      <li><a href="#" onclick="showPage('DoctorNew.html', this)"><i class="fa fa-user-md"></i> <span>Doctor Setup</span></a></li>
+       <li><a href="#" onclick="showPage('WhyChooseUs.html', this)"><i class="fa fa-stethoscope"></i> <span>WHY ChooseUs</span></a></li>
+      <li><a href="#" onclick="showPage('facilities.html', this)"><i class="fa fa-hospital"></i> <span>Facilities Management</span></a></li>
+      <li><a href="#" onclick="showPage('departmentNew.html', this)"><i class="fa fa-building"></i> <span>Facilities</span></a></li>
+      <li><a href="#" onclick="showPage('Specialities.html', this)"><i class="fa fa-stethoscope"></i> <span>IKYA Specialities Management</span></a></li>
+       <li><a href="#" onclick="showPage('HomeBlog.html', this)"><i class="fa fa-stethoscope"></i> <span>Blog Management</span></a></li>
+        <li><a href="#" onclick="showPage('IkyaServices.html', this)"><i class="fa fa-stethoscope"></i> <span>IKYA Services</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <iframe id="mainFrame" src="Doctor.html"></iframe>
+  </div>
+
+  <script>
+    function showPage(page, element) {
+      document.getElementById("mainFrame").src = page;
+
+      // Highlight active link
+      document.querySelectorAll(".sidebar a").forEach(a => a.classList.remove("active"));
+      element.classList.add("active");
+    }
+
+    // Optional: auto highlight first link
+    document.addEventListener("DOMContentLoaded", () => {
+      const firstLink = document.querySelector(".sidebar a");
+      if(firstLink) firstLink.classList.add("active");
+    });
+  </script>
+
+</body>
+</html>

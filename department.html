@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>:: Oreo Hospital :: Services</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- start linking -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/aos/aos.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Material Design Iconic Font CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
+
+</head>
+<style>
+    .text-justify{
+        text-align: justify;
+    }
+     .service-section{
+        padding-top: 0px !important;
+     }
+    .service-section .container{
+        padding: 50px 0px;
+    }
+   .siver-content{
+    border:1.5px solid #e1e1e1;
+    padding: 15px 10px;
+    color:black;
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.4); */
+   box-shadow: 1px 1px 5px 1px rgba(0, 95, 153, 0.6);
+
+
+
+   }
+   .siver-content img {
+    width:110px;
+    height:110px;
+    border-radius: 50%;
+   }
+   .service p{
+    margin-bottom: 0px;
+   }
+    .service h5{
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+    
+    .service img{
+        width:100%;
+        height:100%;
+    }
+    .bg-bluer{ 
+    background-color: #005f99; 
+    color:white;
+}
+.why-choose-us {
+    color:white;
+}
+.why-choose-us
+
+ {
+    background-color: #005f99;
+}
+
+.department-choose{
+    padding-left:20px !important;
+     margin-top: 20px;
+}
+.department-choose li{
+padding-bottom: 20px;
+  padding-left:0px !important;
+}
+</style>
+<body>
+<div class="wrapper">
+    <!-- start loading -->
+    <div id="loading">
+        <p>pleas wait page loading ...</p>
+    </div>
+    <div class="main_header">
+        <section id="top-nav">
+            <div class="container">
+                <div class="top">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7">
+                            <div class="left">
+                                <ul class="list-unstyled m-b-0">
+                                    <li><a href="services.html" class="btn btn-link"><i class="zmdi zmdi-email m-r-5"></i>info@example.com</a>
+                                        <a href="services.html" class="btn btn-link"><i class="zmdi zmdi-phone m-r-5"></i>+
+                                            202-555-0191</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                            <div class="text-right d-none d-md-block">
+                                <ul class="list-unstyled m-b-0">
+                                    <li><a href="javascript:void(0);" class="btn btn-link">Sign in</a> <a href="javascript:void(0);" class="btn btn-link">sign
+                                        up</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <header id="header">
+            <div class="container">
+                <div class="head">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-5">
+                            <a href="index.html" class="navbar-brand"><img src="assets/images/logo.svg" alt="logo"></a>
+                        </div>
+                        <div class="col-lg-7 col-sm-7">
+                            <div class="text-right d-none d-md-block">
+                                <p class="col-white m-b-0 p-t-5"><i class="zmdi zmdi-time"></i> Mon - Sat: 9:00 - 18:00
+                                    Sunday CLOSED </p>
+                                <p class="col-white m-b-0"><i class="zmdi zmdi-pin"></i> 1422 1st St. Santa Rosa CA
+                                    94559. United States </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="navbar" data-aos="fade-down">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                            data-target="#navbarMenu" aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="departments.html">Departments</a></li>
+                            <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="pageMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Blog</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="pageMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="about.html">About Us</a>
+                                    <a class="dropdown-item" href="faq.html">FAQs</a>
+                                    <a class="dropdown-item" href="galary.html">Galary</a>
+                                    <a class="dropdown-item" href="price-list.html">Price list</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="javascript:void(0);">Sign in</a></li>
+                            <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="javascript:void(0);">Sign up</a></li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0 d-none d-lg-inline-block">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- start hero -->
+    <section id="hero">
+        <div class="inner-banner" style="background-image:url(assets/images/banner-service.jpg)">
+            <div class="container">
+                <h3 class="title">Service<br><big>IKYA <strong>Hospital</strong></big></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <section class="main-section">
+
+        <!-- About Us Section -->
+        <div class="service-section x">
+            <!-- <div class="">
+<div class="container">
+                <div class="row">
+                 
+                </div>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="service-cnt">
+                               <div class="section-title col-12" data-aos="fade-right">
+                        <h2> <span>about -</span> Gynaecology & Obstetrics</h2>
+                     
+                    </div>
+                            <p class="text-justify">At Ikea Hospital, our Gynaecology & Obstetrics department is dedicated to women’s health at every stage of life. From adolescence through motherhood and beyond, our team of specialists provides compassionate care, accurate guidance, and advanced treatment. We understand that women’s health needs are unique, which is why we combine modern medical expertise with a supportive environment where patients feel safe and respected.
+
+</p>
+<p class="text-justify">
+    Our services cover routine check-ups, preventive screenings, fertility guidance, pregnancy care, and complex gynaecological surgeries. Whether it’s ensuring a healthy pregnancy or addressing long-term health concerns, our focus is always on the well-being of women and their families
+</p>
+<a class="btn btn-primary btn-round aos-init aos-animate" data-aos="flip-up" href="#">Book  an Appointment</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                   <div class="text-center">
+                    <img src="assets/images/department.png" width="90%" alt="">
+                   </div>
+                </div>
+            </div>
+        </div>
+            </div> -->
+        <!-- About Us Section -->
+
+<!-- department-details.html -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+         <div class="section-title col-12" data-aos="fade-right">
+      <h2 id="deptTitle"><span>About -</span></h2></div>
+      <p id="deptDesc1" class="text-justify"></p>
+      <p id="deptDesc2" class="text-justify"></p>
+      <a href="#" class="btn btn-primary btn-round">Book an Appointment</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <img id="deptImage" src="assets/images/placeholder.jpg" alt="Department" class="department-image">
+    </div>
+  </div>
+</div>
+
+           <!-- Home Our Team -->
+            <!-- <div class="our-team p-0">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="section-title left col-lg-4" data-aos="fade-up">
+                            <h2><span>Meet </span>Our Doctors</h2>
+                            <p>Description text here...</p>
+                        </div>
+                        <div class="section-title right col-lg-8" data-aos="fade-up">
+                            <p><span class="color-212121">Ikya Hospital</span> The wise man therefore always holds in these
+                                matters to this principle of selection: he rejects pleasures to secure.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-01.png" alt="Dr. John"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. John <span>Dentist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="4000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-02.png" alt="Dr. Amelia"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Amelia <span>Gynecologist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-03.png" alt="Dr. Jack"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Jack <span>Audiology</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-google-plus"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-04.png" alt="Dr. Charlie"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Charlie<span>Dentist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="our-team p-0 mt-5">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="section-title left col-lg-4" data-aos="fade-up">
+        <h2><span>Meet </span>Our Doctors</h2>
+        <p>Description text here...</p>
+      </div>
+      <div class="section-title right col-lg-8" data-aos="fade-up">
+        <p><span class="color-212121">Ikya Hospital</span> The wise man therefore always holds in these
+          matters to this principle of selection: he rejects pleasures to secure.</p>
+      </div>
+    </div>
+    <div class="row" id="doctorCards"></div>
+  </div>
+</div>
+
+            <!-- Home Our Team -->
+        
+
+
+
+
+
+
+
+       <!-- Why choose us -->
+    <div class="why-choose-us">
+            <div class="container">
+                <div class="row">
+                
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="common-cnt">
+                               <div class="section-title col-12 aos-init aos-animate p-1" data-aos="fade-right">
+                        <h2 class="text-white p-1"><span>Why </span>Choose Us</h2>
+                      
+                    </div>
+                           <ul class="department-choose">
+                            <li>
+                            Experienced dermatologists & cosmetologists with years of expertise.
+                            </li>
+                            <li>Advanced laser and cosmetic technology ensuring safe results.</li>
+                            <li>Holistic approach balancing medical care with aesthetic needs.</li>
+                            <li>Customized treatment plans for every patient.</li>
+                            <li> Confidential and patient-friendly environment.   </li>
+                           </ul>
+                            <p>
+                                <a class="btn btn-primary btn-round aos-init" data-aos="flip-up">More about practice</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="box-img aos-init aos-animate" data-aos="fade-left" data-aos-duration="3000">
+                            <img src="assets/images/why-choose-img.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why choose us -->
+
+   
+
+        <!-- Services List -->
+        <div class="department-list services-list">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title col-12" data-aos="fade-right">
+                        <h2><span>Most </span>Popular Services</h2>
+                        <p>Description text here...</p>
+                    </div>
+                </div>
+                <div class="row" data-aos="flip-up">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-1.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Routine CheckUp</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-2.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Medical Counseling</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="department-box box-img-cnt">
+                            <div class="box-img"><img src="assets/images/service-3.png" alt=""></div>
+                            <div class="box-cnt">
+                                <h4>Medicine Research</h4>
+                                <p>How all this mistaken al idea of denouncing pleasure praisings pain [...]</p>
+                                <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services List -->
+
+    </section>
+
+    <!-- start footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" placeholder="your email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <button class="btn btn-primary btn-round btn-block margin-0">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-4 col-md-12">
+                    <div class="fcard about">
+                        <h5 class="title">About Hospitals</h5>
+                        <p>The relentless service of Hospitals in the past 25 years taken health care to the most modern
+                            levels in the region catering to urban & rural.</p>
+                        <p>A Health Care Provider of Western Approach, Hospitals is the most trusted multispecialty
+                            hospital.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard links">
+                        <h5 class="title">Usefull Links</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="javascript:void(0);">Consultants</a></li>
+                                    <li><a href="javascript:void(0);">Working Hours</a></li>
+                                    <li><a href="javascript:void(0);">Procedures</a></li>
+                                    <li><a href="javascript:void(0);">Special Offers</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:void(0);">Services</a></li>
+                                    <li><a href="javascript:void(0);">Healthy Foods</a></li>
+                                    <li><a href="javascript:void(0);">Appointments</a></li>
+                                    <li><a href="javascript:void(0);">Latest News</a></li>
+                                    <li><a href="javascript:void(0);">Certificates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fcard contact links">
+                        <h5 class="title">Contact Details</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="zmdi zmdi-pin"></i>Park Drive, Varick Str NY 10012, USA</li>
+                            <li><i class="zmdi zmdi-email"></i>Getwell@Hospitals.com</li>
+                            <li><i class="zmdi zmdi-phone"></i>(123) 0200 12345 & 7890</li>
+                            <li><i class="zmdi zmdi-time"></i>Mon-Friday: 9am to 18pm</li>
+                            <li><i class="zmdi zmdi-time"></i>Sat-Sunday: 10am to 16pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <small>Copyright &copy; 2018 Oreo Theme by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a>
+                        </small>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="up"><a href="services.html#header"><i class="zmdi zmdi-caret-up-circle"></i></a></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="social float-md-right"><a href="services.html"><i class="zmdi zmdi-facebook m-r-10"></i></a> <a
+                                href="services.html"><i class="zmdi zmdi-twitter m-r-10"></i></a> <a href="services.html"><i
+                                class="zmdi zmdi-dribbble m-r-10"></i></a> <a href="services.html"><i
+                                class="zmdi zmdi-behance m-r-10"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- start screpting -->
+<script src="assets/bundles/libscripts.bundle.js"></script>
+<script src="assets/js/app.js"></script><!-- my js -->
+
+   <script>
+  const API_BASE = "http://localhost:8081/Specialities";
+  const DoctorApi = "http://localhost:8081/doctors";
+
+  // Helper to get `id` from URL
+  function getDepartmentId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
+  }
+
+  let currentDeptTitle = ""; // store department title for filtering
+
+  // Load department details
+  async function loadDepartment() {
+    const id = getDepartmentId();
+    if (!id) {
+      alert("Invalid Department ID");
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/${id}`);
+      if (!res.ok) throw new Error("Department not found");
+
+      const dept = await res.json();
+      currentDeptTitle = dept.title?.trim() || ""; // save for doctors filtering
+
+      // Populate content
+      document.getElementById("deptTitle").innerHTML = `<span>About -</span> ${dept.title}`;
+      document.getElementById("deptDesc1").textContent = dept.description || "";
+      document.getElementById("deptDesc2").textContent = dept.description2 || "";
+
+      if (dept.image) {
+        document.getElementById("deptImage").src = `http://localhost:8081${dept.image}`;
+      }
+
+      // After dept loaded → load doctors
+      renderDoctorCards();
+
+    } catch (err) {
+      console.error("Failed to load department:", err);
+      document.querySelector(".container").innerHTML = `
+        <div class="alert alert-danger">Could not load department details.</div>`;
+    }
+  }
+
+  // Render Meet Our Doctors Section
+  async function renderDoctorCards() {
+    try {
+      const res = await fetch(`${DoctorApi}/all`);
+      const doctors = await res.json();
+      const container = document.getElementById("doctorCards");
+      container.innerHTML = "";
+
+      // filter doctors whose specialization == dept title
+      const filteredDocs = doctors.filter(
+        d => d.specialization?.trim().toLowerCase() === currentDeptTitle.toLowerCase()
+      );
+
+      if (filteredDocs.length === 0) {
+        container.innerHTML = `<div class="col-12"><p class="text-center text-muted">No doctors available for ${currentDeptTitle}</p></div>`;
+        return;
+      }
+
+      filteredDocs.forEach((doc, i) => {
+        container.innerHTML += `
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${3000 + i*500}">
+              <div class="doctor-pic">
+                <img src="http://localhost:8081${doc.profileImage || '/assets/images/default-doctor.png'}" 
+                     alt="${doc.doctorName}" style="height:250px; object-fit:cover;">
+              </div>
+              <div class="doctor-info">
+                <h4>${doc.doctorName} <span>${doc.specialization || ''}</span></h4>
+                <ul class="clearfix">
+                  <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                  <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                  <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                </ul>
+                <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    } catch (err) {
+      console.error("Error fetching doctors:", err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadDepartment);
+</script>
+
+
+
+</body>
+</html>

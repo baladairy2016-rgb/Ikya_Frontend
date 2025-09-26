@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Doctor Management</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  body {
+    background: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+  }
+  h2, h3 { text-align: center; margin-bottom: 25px; color: #1f2937; }
+  
+  /* Card Form */
+  form.card {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    margin-bottom: 40px;
+  }
+
+  #dayTimeContainer .row { gap: 8px; align-items: center; margin-bottom: 5px; }
+
+  .day-badge {
+    display: inline-block;
+    margin: 2px 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background: #007bff;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  }
+  th {
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  td {
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  tr:hover { background: #f1f5f9; }
+  td img { border-radius: 50%; }
+
+  .btn-sm { font-size: 12px; padding: 5px 10px; }
+
+  /* Profile image preview */
+  #imagePreview {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+
+  @media(max-width: 768px) {
+    table { font-size: 12px; }
+    td, th { padding: 6px 8px; }
+    #dayTimeContainer .row { flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body class="container">
+
+<h2>👨‍⚕️ Doctor Management</h2>
+
+<!-- Doctor Form -->
+<form id="doctorForm" class="card">
+  <input type="hidden" id="doctorId" />
+  <div class="row g-3">
+
+    <div class="col-md-6">
+      <label class="form-label">Doctor Name</label>
+      <input type="text" id="doctorName" class="form-control" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Phone</label>
+      <input type="text" id="phone" class="form-control" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Specialization</label>
+      <input type="text" id="specialization" class="form-control" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Experience (Years)</label>
+      <input type="number" id="experience" class="form-control" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Qualification</label>
+      <input type="text" id="qualification" class="form-control" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Gender</label>
+      <select id="gender" class="form-select">
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+        <option value="OTHER">Other</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Consulting Fee</label>
+      <input type="number" id="consultingFee" class="form-control" />
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Working Days & Hours</label>
+      <div id="dayTimeContainer"></div>
+      <button type="button" class="btn btn-sm btn-secondary mt-2" onclick="addDayTimeRow()"><i class="fa fa-plus"></i> Add Day/Time</button>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Location</label>
+      <input type="text" id="location" class="form-control" placeholder="Clinic / Hospital Address"/>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Specialities</label>
+      <textarea id="specialities" class="form-control" placeholder="Breast Surgery, Endocrinology, etc."></textarea>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Description / Bio</label>
+      <textarea id="description" class="form-control" placeholder="Doctor bio and profile"></textarea>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Profile Image</label>
+      <input type="file" id="imageFile" class="form-control" onchange="previewImage(event)"/>
+      <img id="imagePreview" src="" alt="Preview"/>
+    </div>
+
+  </div>
+
+  <div class="mt-3 d-flex gap-2 justify-content-center">
+    <button type="button" class="btn btn-success" onclick="saveDoctor()"><i class="fa fa-save"></i> Save</button>
+    <button type="button" class="btn btn-primary" onclick="updateDoctor()"><i class="fa fa-edit"></i> Update</button>
+    <button type="reset" class="btn btn-secondary" onclick="resetDayTime()"><i class="fa fa-refresh"></i> Clear</button>
+  </div>
+</form>
+
+<h3>Doctor List</h3>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Specialization</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Experience</th>
+        <th>Qualification</th>
+        <th>Gender</th>
+        <th>Fee</th>
+        <th>Working Hours</th>
+        <th>Location</th>
+        <th>Specialities</th>
+        <th>Description</th>
+        <th>Profile</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="doctorTable"></tbody>
+  </table>
+</div>
+
+<script>
+const API_BASE = "http://localhost:8081/doctors";
+const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+
+// Image preview
+function previewImage(event){
+  const preview = document.getElementById("imagePreview");
+  preview.src = URL.createObjectURL(event.target.files[0]);
+}
+
+// Day/time rows
+function addDayTimeRow(day="", start="", end="") {
+  const container = document.getElementById("dayTimeContainer");
+  const div = document.createElement("div");
+  div.className = "row g-2 mb-2 align-items-center";
+  div.innerHTML = `
+    <div class="col-md-4">
+      <select class="form-select daySelect">
+        <option value="">Select Day</option>
+        ${daysOfWeek.map(d => `<option value="${d}" ${d===day?'selected':''}>${d}</option>`).join("")}
+      </select>
+    </div>
+    <div class="col-md-3">
+      <input type="time" class="form-control startTime" value="${start}" />
+    </div>
+    <div class="col-md-3">
+      <input type="time" class="form-control endTime" value="${end}" />
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-danger btn-sm" onclick="removeDayTimeRow(this)"><i class="fa fa-trash"></i></button>
+    </div>
+  `;
+  container.appendChild(div);
+}
+function removeDayTimeRow(btn){ btn.closest("div.row").remove(); }
+function resetDayTime(){ document.getElementById("dayTimeContainer").innerHTML=""; }
+function getDayTimePairs(){
+  const container = document.getElementById("dayTimeContainer");
+  const rows = container.querySelectorAll(".row");
+  const days=[]; const times=[];
+  rows.forEach(row=>{
+    const day=row.querySelector(".daySelect").value;
+    const start=row.querySelector(".startTime").value;
+    const end=row.querySelector(".endTime").value;
+    if(day && start && end){ days.push(day); times.push(`${start} - ${end}`); }
+  });
+  return {days, times};
+}
+
+// Fetch and render doctors
+async function fetchDoctors(){
+  const res = await fetch(`${API_BASE}/all`);
+  const doctors = await res.json();
+  const tbody = document.getElementById("doctorTable");
+  tbody.innerHTML = "";
+  doctors.forEach(doc=>{
+    let workingHours = "";
+    if(doc.availableDays && doc.availableTime){
+      const days = doc.availableDays.split(",");
+      const times = doc.availableTime.split(",");
+      days.forEach((d,i)=>{ 
+        const time = times[i] || times[0]; // repeat if only one
+        workingHours += `<span class="day-badge">${d}: ${time}</span>`;
+      });
+    }
+    tbody.innerHTML += `
+      <tr>
+        <td>${doc.doctorId}</td>
+        <td>${doc.doctorName}</td>
+        <td>${doc.specialization||""}</td>
+        <td>${doc.email}</td>
+        <td>${doc.phone}</td>
+        <td>${doc.experience||""}</td>
+        <td>${doc.qualification||""}</td>
+        <td>${doc.gender||""}</td>
+        <td>${doc.consultingFee||""}</td>
+        <td>${workingHours}</td>
+        <td>${doc.location||""}</td>
+        <td>${doc.specialities||""}</td>
+        <td>${doc.description||""}</td>
+        <td>${doc.profileImage? `<img src="http://localhost:8081${doc.profileImage}" width="50"/>` : ""}</td>
+        <td>
+          <button class="btn btn-sm btn-warning" onclick='editDoctor(${JSON.stringify(doc)})'><i class="fa fa-edit"></i></button>
+          <button class="btn btn-sm btn-danger" onclick="deleteDoctor(${doc.doctorId})"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+// Prefill for edit
+function editDoctor(doc){
+  document.getElementById("doctorId").value = doc.doctorId;
+  document.getElementById("doctorName").value = doc.doctorName;
+  document.getElementById("email").value = doc.email;
+  document.getElementById("phone").value = doc.phone;
+  document.getElementById("specialization").value = doc.specialization||"";
+  document.getElementById("experience").value = doc.experience||"";
+  document.getElementById("qualification").value = doc.qualification||"";
+  document.getElementById("gender").value = doc.gender||"";
+  document.getElementById("consultingFee").value = doc.consultingFee||"";
+  document.getElementById("location").value = doc.location||"";
+  document.getElementById("specialities").value = doc.specialities||"";
+  document.getElementById("description").value = doc.description||"";
+  resetDayTime();
+  if(doc.availableDays && doc.availableTime){
+    const days = doc.availableDays.split(",");
+    const times = doc.availableTime.split(",");
+    days.forEach((d,i)=> addDayTimeRow(d, ...(times[i]?.split(" - ") || times[0].split(" - "))));
+  }
+}
+
+async function saveDoctor(){
+  const dayTime = getDayTimePairs();
+  const doctor = {
+    doctorName: document.getElementById("doctorName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    specialization: document.getElementById("specialization").value,
+    experience: document.getElementById("experience").value,
+    qualification: document.getElementById("qualification").value,
+    gender: document.getElementById("gender").value,
+    consultingFee: document.getElementById("consultingFee").value,
+    availableDays: dayTime.days.join(","),
+    availableTime: dayTime.times.join(","),
+    location: document.getElementById("location").value,
+    specialities: document.getElementById("specialities").value,
+    description: document.getElementById("description").value,
+    createdBy: "admin",
+    createdIp: "127.0.0.1"
+  };
+  const formData = new FormData();
+  formData.append("doctor", new Blob([JSON.stringify(doctor)], { type: "application/json" }));
+  const imageFile = document.getElementById("imageFile").files[0];
+  if(imageFile) formData.append("imageFile", imageFile);
+  await fetch(`${API_BASE}/add`, { method:"POST", body:formData });
+  fetchDoctors();
+  document.getElementById("doctorForm").reset();
+  resetDayTime();
+}
+
+async function updateDoctor(){
+  const doctorId = document.getElementById("doctorId").value;
+  if(!doctorId){ alert("Select a doctor to update!"); return; }
+  const dayTime = getDayTimePairs();
+  const doctor = {
+    doctorName: document.getElementById("doctorName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    specialization: document.getElementById("specialization").value,
+    experience: document.getElementById("experience").value,
+    qualification: document.getElementById("qualification").value,
+    gender: document.getElementById("gender").value,
+    consultingFee: document.getElementById("consultingFee").value,
+    availableDays: dayTime.days.join(","),
+    availableTime: dayTime.times.join(","),
+    location: document.getElementById("location").value,
+    specialities: document.getElementById("specialities").value,
+    description: document.getElementById("description").value,
+    modifiedBy: "admin",
+    modifiedIp: "127.0.0.1"
+  };
+  const formData = new FormData();
+  formData.append("doctor", new Blob([JSON.stringify(doctor)], { type:"application/json" }));
+  const imageFile = document.getElementById("imageFile").files[0];
+  if(imageFile) formData.append("imageFile", imageFile);
+  await fetch(`${API_BASE}/update/${doctorId}`, { method:"PUT", body:formData });
+  alert("Doctor updated successfully!");
+  fetchDoctors();
+  document.getElementById("doctorForm").reset();
+  resetDayTime();
+  document.getElementById("doctorId").value="";
+}
+
+async function deleteDoctor(doctorId){
+  if(!confirm("Are you sure you want to delete this doctor?")) return;
+  await fetch(`${API_BASE}/delete/${doctorId}`, { method:"DELETE" });
+  alert("Doctor deleted successfully!");
+  fetchDoctors();
+}
+
+fetchDoctors();
+</script>
+
+</body>
+</html>

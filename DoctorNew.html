@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Doctor Setup</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+  h2 { text-align:center; margin-bottom:30px; color:#0d6efd; }
+  .card { padding:20px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.1); margin-bottom:40px; }
+  .slot-item { display:inline-block; margin:3px; padding:4px 10px; border-radius:12px; background:#0d6efd; color:#fff; font-size:13px; cursor:pointer; }
+  .slot-item span { margin-left:6px; color:#ff4d4f; cursor:pointer; }
+  td img { border-radius:50%; }
+  .form-check-inline { margin-right:10px; }
+  table { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+  th { background:#0d6efd; color:#fff; font-weight:500; text-transform:uppercase; font-size:13px; }
+  td { vertical-align:middle; font-size:14px; }
+  tr:hover { background:#f1f5f9; }
+  #imagePreview { width:80px; height:80px; border-radius:12px; object-fit:cover; margin-top:10px; }
+  @media(max-width:768px){ .slot-item { font-size:12px; } td, th { font-size:12px; } }
+</style>
+</head>
+<body class="container py-4">
+
+<h2>👨‍⚕️ Doctor Setup</h2>
+
+<!-- Doctor Form Card -->
+<div class="card">
+  <form id="doctorForm">
+    <input type="hidden" id="doctorId">
+
+    <div class="row mb-3">
+      <div class="col-md-6"><input type="text" id="doctorName" placeholder="Doctor Name" class="form-control" required></div>
+      <div class="col-md-6"><input type="email" id="email" placeholder="Email" class="form-control" required></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6"><input type="text" id="phone" placeholder="Doctor Phone" class="form-control"></div>
+      <div class="col-md-6"><input type="text" id="specialization" placeholder="Specialization" class="form-control"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6"><input type="text" id="experience" placeholder="Experience (Years)" class="form-control"></div>
+      <div class="col-md-6"><input type="text" id="qualification" placeholder="Qualification" class="form-control"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <select id="gender" class="form-select">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="col-md-6"><input type="number" id="consultingFee" placeholder="Consulting Fee" class="form-control"></div>
+    </div>
+
+    <!-- Available Days -->
+    <div class="mb-3">
+      <label class="form-label">Available Days:</label><br>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Mon" class="form-check-input" id="dayMon"><label class="form-check-label" for="dayMon">Mon</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Tue" class="form-check-input" id="dayTue"><label class="form-check-label" for="dayTue">Tue</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Wed" class="form-check-input" id="dayWed"><label class="form-check-label" for="dayWed">Wed</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Thu" class="form-check-input" id="dayThu"><label class="form-check-label" for="dayThu">Thu</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Fri" class="form-check-input" id="dayFri"><label class="form-check-label" for="dayFri">Fri</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Sat" class="form-check-input" id="daySat"><label class="form-check-label" for="daySat">Sat</label></div>
+      <div class="form-check form-check-inline"><input type="checkbox" value="Sun" class="form-check-input" id="daySun"><label class="form-check-label" for="daySun">Sun</label></div>
+    </div>
+
+    <!-- Time Slots -->
+    <div class="row mb-3 g-2">
+      <div class="col-md-5"><input type="time" id="startTime" class="form-control"></div>
+      <div class="col-md-5"><input type="time" id="endTime" class="form-control"></div>
+      <div class="col-md-2"><button type="button" class="btn btn-secondary w-100" onclick="addSlot()"><i class="fa fa-plus"></i> Add Slot</button></div>
+    </div>
+    <div id="slotsContainer" class="mb-3"></div>
+
+    <div class="mb-3"><textarea id="description" placeholder="Description" class="form-control" rows="3"></textarea></div>
+    <div class="mb-3">
+      <input type="file" id="imageFile" accept="image/*" class="form-control">
+      <img id="imagePreview" src="" alt="Preview">
+    </div>
+
+    <div class="d-flex justify-content-center gap-2">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Doctor</button>
+      <button type="reset" class="btn btn-secondary" onclick="clearSlots()"><i class="fa fa-refresh"></i> Clear</button>
+    </div>
+  </form>
+</div>
+
+<!-- Doctors Table -->
+<div class="table-responsive">
+  <table class="table table-bordered" id="doctorsTable">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th><th>Name</th><th>Specialization</th><th>Email</th><th>Phone</th>
+        <th>Experience</th><th>Qualification</th><th>Gender</th><th>Fee</th><th>Working Hours</th>
+        <th>Description</th><th>Image</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+  const API_BASE = "http://localhost:8081/doctors";
+  let slots = [];
+
+  function addSlot(){
+    const start = document.getElementById("startTime").value;
+    const end = document.getElementById("endTime").value;
+    if(!start || !end){ alert("Select start and end time!"); return; }
+    const slot = `${formatTime(start)} - ${formatTime(end)}`;
+    slots.push(slot);
+    renderSlots();
+    document.getElementById("startTime").value = "";
+    document.getElementById("endTime").value = "";
+  }
+
+  function renderSlots(){
+    const container = document.getElementById("slotsContainer");
+    container.innerHTML = "";
+    slots.forEach((s,i)=> container.innerHTML += `<div class="slot-item">${s} <span onclick="removeSlot(${i})">&times;</span></div>`);
+  }
+
+  function removeSlot(i){ slots.splice(i,1); renderSlots(); }
+  function clearSlots(){ slots = []; renderSlots(); }
+  function formatTime(t){ let [h,m]=t.split(":");h=parseInt(h);const ampm=h>=12?"PM":"AM";h=h%12||12;return `${h}:${m}${ampm}`; }
+
+  document.getElementById("imageFile").addEventListener("change", e=>{
+    document.getElementById("imagePreview").src = URL.createObjectURL(e.target.files[0]);
+  });
+
+  document.getElementById("doctorForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const days = [...document.querySelectorAll("input[type=checkbox]:checked")].map(cb=>cb.value).join(",");
+    const dto = {
+      doctorName: doctorName.value,
+      email: email.value,
+      phone: phone.value,
+      specialization: specialization.value,
+      experience: experience.value,
+      qualification: qualification.value,
+      gender: gender.value,
+      consultingFee: consultingFee.value ? Number(consultingFee.value) : null,
+      availableDays: days,
+      availableTime: slots.join("\n"),
+      description: description.value
+    };
+    const formData = new FormData();
+    formData.append("doctor", new Blob([JSON.stringify(dto)],{type:"application/json"}));
+    if(imageFile.files[0]) formData.append("imageFile", imageFile.files[0]);
+    const doctorIdVal = doctorId.value;
+    const url = doctorIdVal ? `${API_BASE}/update/${doctorIdVal}` : `${API_BASE}/add`;
+    fetch(url,{method:"POST",body:formData})
+      .then(res=>res.json())
+      .then(()=>{ alert("Doctor saved!"); loadDoctors(); doctorForm.reset(); clearSlots(); doctorId.value=""; })
+      .catch(err=>{ console.error(err); alert("Failed to save doctor."); });
+  });
+
+  function loadDoctors(){
+    fetch(`${API_BASE}/all`).then(res=>res.json()).then(data=>{
+      const tbody = document.querySelector("#doctorsTable tbody");
+      tbody.innerHTML="";
+      data.forEach(doc=>{
+        const workingHours = (doc.availableDays||"") + "\n" + (doc.availableTime||"");
+        tbody.innerHTML += `
+          <tr>
+            <td>${doc.doctorId}</td><td>${doc.doctorName}</td><td>${doc.specialization||""}</td>
+            <td>${doc.email}</td><td>${doc.phone}</td><td>${doc.experience||""}</td><td>${doc.qualification||""}</td>
+            <td>${doc.gender||""}</td><td>${doc.consultingFee||""}</td>
+            <td style="white-space: pre-line;">${workingHours}</td><td>${doc.description||""}</td>
+            <td>${doc.profileImage?`<img src="http://localhost:8081${doc.profileImage}" width="50">`:""}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" onclick='editDoctor(${JSON.stringify(doc)})'><i class="fa fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger" onclick="deleteDoctor(${doc.doctorId})"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        `;
+      });
+    }).catch(err=>console.error(err));
+  }
+
+  function editDoctor(doc){
+    doctorId.value = doc.doctorId;
+    doctorName.value = doc.doctorName;
+    email.value = doc.email;
+    phone.value = doc.phone;
+    specialization.value = doc.specialization;
+    experience.value = doc.experience;
+    qualification.value = doc.qualification;
+    gender.value = doc.gender;
+    consultingFee.value = doc.consultingFee;
+    description.value = doc.description;
+    document.querySelectorAll("input[type=checkbox]").forEach(cb=>cb.checked=(doc.availableDays||"").includes(cb.value));
+    slots = (doc.availableTime||"").split("\n").filter(s=>s);
+    renderSlots();
+  }
+
+  function deleteDoctor(id){
+    if(confirm("Delete doctor?")){
+      fetch(`${API_BASE}/delete/${id}`,{method:"DELETE"})
+      .then(()=>{ alert("Deleted!"); loadDoctors(); })
+      .catch(err=>console.error(err));
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadDoctors);
+</script>
+
+</body>
+</html>

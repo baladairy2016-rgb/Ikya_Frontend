@@ -1,0 +1,1798 @@
+    <!doctype html>
+    <html class="no-js " lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>:: Oreo Hospital :: Home</title>
+        <link rel="icon" href="favicon.ico">
+        <!-- start linking -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/plugins/aos/aos.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+    </head>
+    <style>
+#departmentMenu {
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+width: 500px; /* or increase if needed */
+/* padding: 10px; */
+background-color: #fff;
+}
+
+#departmentMenu .dropdown-item {
+    flex: 0 0 10%; /* Each item gets 10% of row (so 10 per row) */
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: left;
+    padding: 5px;
+    min-width: 70px; /* Optional: prevent too narrow */
+}
+
+
+        .text-justify{
+            text-align: justify;
+        }
+    section .section-top p{
+            font-size:18px;
+        }
+       .our-best-service .service-box .service-name{
+        margin-top: 20px;
+       }
+      
+
+    .our-best-service .row{
+   justify-content: space-between;
+    }
+    .our-best-service .col-md-2 {
+        max-width: 160px;
+        max-height: 140px;
+        background-color: white;
+        border-radius: 10px;
+        margin-top:10px;
+    }
+    .service-icon{
+        border-radius:50%; 
+        border: 1px solid red;
+        width:55px;
+        height:55px;
+     align-content: center;
+     text-align: center;
+    }
+      .service-icon img{
+        width:40px;
+        align-content: center;
+      }
+      .service-box{
+        text-align: center;
+       width: 115px;
+      
+      }
+       .our-best-service .service-box{
+ padding-top: 15px;
+       }
+      .our-best-service .service-box .service-name{
+        font-size: 13px;
+
+      }
+      .service-name{
+        height: 40px;;
+      }
+      .our-best-service .service-box .service-name{
+        color:#352d82;
+      }.why-choose-us{
+
+
+background-color: #005f99;
+
+        
+      }
+      .swiper-slide img{
+        height: 400px;
+      }
+    .why-choose-us .common-cnt{
+   
+        display: flex;
+        gap:123px;
+      }
+      .why-choose-us .common-cnt .section-top p{
+        color:white;
+        font-size: 16px;
+        font-weight:  600;
+         
+      }
+          .why-choose-us .section-title{
+        padding: 15px 5px ;
+      }
+
+
+
+#appointmentSection .card{
+        padding: 15px 5px ;
+        border-radius: 5px;
+      }
+      #appointmentSection .form-label{
+        margin-bottom: 6px;
+      }
+      #appointmentSection  .card h2{
+        font-size: 25px;
+        margin-left:10px;
+      }
+
+
+      
+    /* Hero Slider  */
+    .hero-slider { position: relative; width: 100%; height: 90vh; overflow: hidden; }
+    .hero-slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: left; text-align: left; color: #fff; opacity: 0; transition: opacity 1s ease-in-out; }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4);  z-index: 0; }
+    .hero-slide > * { position: relative; z-index: 1; }
+    .hero-slide h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+    .hero-slide p { font-size: 1.8rem; max-width: 700px; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); }
+
+    .hero-dots { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+    .hero-dots span { width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; }
+    .hero-dots span.active { background: #fff; }
+
+
+      .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
+    .modal-content { background:#fff; padding:20px; width:420px; margin:80px auto; border-radius:8px; position:relative; }
+    .close { position:absolute; right:12px; top:8px; cursor:pointer; font-size:20px; }
+    .file-preview { width:50px; height:50px; object-fit:cover; border-radius:4px; }
+    .card { max-width:1100px; margin: 0 auto; }
+
+
+
+    .abt-sec {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+ 
+  border-radius: 10px;
+}
+.main-heading {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+#featuresContainer{
+  justify-content: end;
+}
+.abt-sec p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+.about-img{
+  width:530px;
+  height:350px;
+}
+
+
+
+.hero-slide .hero-text{
+  position: relative;
+  left:130px;
+}
+
+  .hidden { display: none; }
+  .card { padding: 20px; }
+  .card{
+      margin-top: -110px;
+   }
+/* Model */
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+    .modal-content { background:#fff; padding:20px; width:350px; margin:100px auto; border-radius:8px; }
+    .toggle-link { color:blue; cursor:pointer; font-size:14px; margin-top:10px; display:block; }
+      
+    </style>
+    <body>
+
+    <div id="loading" class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/loader.svg" width="48" height="48" alt="Oreo"></div>
+            <p>Please wait...</p>        
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <!-- start loading -->    
+       <div id="header-placeholder"></div>
+
+        <!-- start hero -->
+      
+
+                 	<section class="hero-slider" id="heroSlider">
+                        <div class="hero-dots" id="heroDots"></div>
+
+                     </section>
+
+
+                        <section id="appointmentSection" class="">
+   <div class="container">
+   
+       <div class="card shadow-lg border-0 rounded-3">
+              
+          <h2 class="mb-3">📅 Make an Appointment</h2>
+
+          <form id="appointmentForm" class="row g-3 m-0">
+            <input type="hidden" id="appointmentId">
+
+            <div class="col-md-4">
+              <label class="form-label">Patient Name</label>
+              <input type="text" id="appointmentName" class="form-control" placeholder="Full name">
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Mobile</label>
+              <input type="text" id="appointmentMobile" class="form-control" placeholder="Mobile number">
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Specialization</label>
+              <select id="specialization" class="form-control" required>
+                <option value="">-- Select Specialization --</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label">Appointment Date</label>
+              <input type="date" id="appointmentDate" class="form-control" required>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label">Appointment Time</label>
+              <input type="time" id="appointmentTime" class="form-control" required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Doctor</label>
+              <select id="doctorId" class="form-control" required>
+                <option value="">-- Select Doctor --</option>
+              </select>
+            </div>
+
+            <!-- <div class="col-md-4 text-end mt-3" style="margin-left:auto;">
+             <button class="btn btn-primary btn-round btn-block m-t-0 m-b-0">Submit</button>
+            </div> -->
+             <div class="col-md-4 text-end mt-3" style="margin-left:auto;">
+              <button type="submit" id="bookBtn" class="btn btn-success px-4" disabled>Book Appointment</button>
+            </div>
+          </form>
+
+        </div>
+ 
+ 
+   </div>
+ 
+  </section>
+
+  
+  <!-- PATIENT DETAILS / OTP modal -->
+  <div id="patientModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h4>Patient Details & OTP</h4>
+
+      <form id="patientForm" class="mt-2">
+        <div class="mb-2">
+          <label>Alternate Phone Number</label>
+          <input type="text" id="altPhone" class="form-control" placeholder="Alternate phone (optional)">
+        </div>
+
+        <div class="mb-2">
+          <label>Gender</label>
+          <select id="gender" class="form-control">
+            <option value="">--Select--</option>
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <label>Age</label>
+          <input type="number" id="age" class="form-control" min="0" placeholder="Age">
+        </div>
+
+        <div class="mb-2">
+          <label>Email (OTP will be sent here)</label>
+          <input type="email" id="email" class="form-control" placeholder="example@domain.com" required>
+        </div>
+
+        <div class="mb-2">
+          <label>Location</label>
+          <input type="text" id="location" class="form-control" placeholder="Location">
+        </div>
+
+        <div id="otpSection" style="display:none;" class="mb-2">
+          <label>Enter OTP</label>
+          <div class="input-group">
+            <input type="text" id="otpInput" class="form-control" placeholder="6-digit OTP">
+            <button type="button" id="verifyOtpBtn" class="btn btn-outline-primary">Verify</button>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="button" id="generateOtpBtn" class="btn btn-outline-secondary">Send OTP to Email</button>
+          <button type="submit" id="confirmBtn" class="btn btn-primary" disabled>Update & Pay</button>
+           <input type="hidden" id="amount">
+        </div>
+      </form>
+    </div>
+  </div>
+
+        <!-- Content Area -->
+        <section class="main-section">
+
+            <!-- Home About Us Section -->
+
+     <div id="aboutUsDynamic" class="about-us-section">
+  <!-- About Us content will be injected here -->
+</div>
+
+
+
+
+            <!-- Home About Us Section -->
+
+            <!-- Home About Us Section -->
+            <!-- <div class="our-best-service xl-slategray section-65-100">
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="section-title col-12" data-aos="fade-up">
+                            <h2><span>Our </span>Best Department</h2>
+                            <p>Description text here...</p>
+                        </div>
+                    </div>
+             <div class="row">
+          <div class="col-lg-8 p-0">
+       <div class="row">
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/emergency.png" alt="Cardio Monitoring" width="70px"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">General Medicine</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Orthodontics">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">General Surgery</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up"  data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Traumatology">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Gynaecology & Obstetrics</div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Cardiology">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Orthopedics</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Prostheses">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Dermatology & Cosmetology
+</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Anaesthesiology</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                                  <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Critical Care</div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                                  <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Radiology </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Cardiology</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Urology</div>
+                              
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Nephrology</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Gastroenterology</div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Neurology & Neurosurgery</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                                   <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Pulmonary"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Geriatrics</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+
+                           <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/emergency.png" alt="Cardio Monitoring" width="70px"></div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Physiotherapy</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Orthodontics">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Rehabilitation</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up"  data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Traumatology">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Clinical Psychology</div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Cardiology">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Counselling</div>
+                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Prostheses">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Pain Clinic
+
+                                     </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                               <div class="col-md-2 col-sm-6">
+                            <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+                                <div class="service-icon"><img src="assets/images/warning (1).png" alt="Prostheses">
+                                </div>
+                                <div class="service-cnt">
+                                    <div class="service-name">Painless Labour
+                                      </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                             
+                    </div>
+          </div>
+          <div class="col-lg-4">
+<img src="assets/images/specilities.png" alt="" width="100%" class="pl-3+">
+          </div>
+             </div>
+                </div>
+            </div> -->
+
+<div class="our-best-service xl-slategray section-65-100">
+  <div class="container p-0">
+    <div class="row">
+      <div class="section-title col-12" data-aos="fade-up">
+        <h2><span>Our </span>Best Department</h2>
+       
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 p-0">
+        <div class="row" id="servicesContainer">
+            
+          <!-- Dynamic service boxes will appear here -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <img src="assets/images/specilities.png" alt="" width="100%" class="pl-3">
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- Home About Us Section -->
+
+            <!-- Home Fun Fact 
+            <div class="fun-fact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="fun-fact-box text-center">
+                                <i class="zmdi zmdi-account"></i>
+                                <span class="counter timer" data-from="0" data-to="652" data-speed="2500"
+                                    data-fresh-interval="700">652</span>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="fun-fact-box text-center">
+                                <i class="zmdi zmdi-favorite"></i>
+                                <span class="counter timer" data-from="0" data-to="7652" data-speed="2500"
+                                    data-fresh-interval="700">7652</span>
+                                <p>Heart Transplant</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="fun-fact-box text-center">
+                                <i class="zmdi zmdi-thumb-up"></i>
+                                <span class="counter timer" data-from="0" data-to="52" data-speed="2500"
+                                    data-fresh-interval="700">52</span>
+                                <p>Years Of Experience</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="fun-fact-box text-center">
+                                <i class="zmdi zmdi-mood"></i>
+                                <span class="counter timer" data-from="0" data-to="7652" data-speed="2500"
+                                    data-fresh-interval="700">7652</span>
+                                <p>Well Smiley Faces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!-- Home Fun Fact -->
+
+            <!-- Home Our Team -->
+            <!-- <div class="our-team">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="section-title left col-lg-4" data-aos="fade-up">
+                            <h2><span>Meet </span>Our Team</h2>
+                           
+                        </div>
+                        <div class="section-title right col-lg-8" data-aos="fade-up">
+                            <p><span class="color-212121">Ikya Hospital</span> The wise man therefore always holds in these
+                                matters to this principle of selection: he rejects pleasures to secure.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-01.png" alt="Dr. John"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. John <span>Dentist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="4000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-02.png" alt="Dr. Amelia"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Amelia <span>Gynecologist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-03.png" alt="Dr. Jack"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Jack <span>Audiology</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-google-plus"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                                <div class="doctor-pic"><img src="assets/images/team-member-04.png" alt="Dr. Charlie"></div>
+                                <div class="doctor-info">
+                                    <h4>Dr. Charlie<span>Dentist</span></h4>
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
+                                        <li><a href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    </ul>
+                                    <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="our-team">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="section-title left col-lg-4" data-aos="fade-up">
+        <h2><span>Meet </span>Our Team</h2>
+      </div>
+      <div class="section-title right col-lg-8" data-aos="fade-up">
+        <p><span class="color-212121">Ikya Hospital</span> The wise man therefore always holds in these
+          matters to this principle of selection: he rejects pleasures to secure.</p>
+      </div>
+    </div>
+    <div class="row" id="teamContainer">
+      <!-- Team members will be injected here -->
+    </div>
+  </div>
+</div>
+            <!-- Home Our Team -->
+
+            <!-- Home Why choose us -->
+
+            <!-- <div class="why-choose-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title col-12" data-aos="fade-up">
+                            <h2 class="text-white"><span>Our </span>Facilities</h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-lg-7 col-md-12 p-1">
+                            <div class="common-cnt">
+                                <div class="section-top" data-aos="fade-down">
+                                 <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Out Patient Services
+                                 </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> In Patient Services
+                                     </p> 
+                                 </div>
+                                           <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Day Care Procedures
+                                        </p> 
+                                 </div>
+                                                           <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Casualty
+                                         </p> 
+                                 </div>
+                                 <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Emergency Care
+
+                                    </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> ICU
+                                      </p> 
+                                 </div>
+
+                                       <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Dialysis
+                                   </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Minor O.T
+                                     </p> 
+                                 </div>
+
+
+                                </div>
+                                    
+                                    
+                                    
+                                        <div class="section-top" data-aos="fade-down">
+                                 <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Major O.T
+
+                                         </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Trauma O.T
+                                    </p> 
+                                 </div>
+
+
+                                      <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Labour Room
+                                    </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Advanced Laparoscopy
+
+                                          </p> 
+                                 </div>
+
+
+
+                                      <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Labour Room
+                                    </p> 
+                                 </div>
+                                   <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Advanced Laparoscopy
+
+                                          </p> 
+                                 </div>
+                                      <div>
+                                    <p><span> <span><img src="assets/images/surgery-room (1).png" alt="" width="20px"> </span> Labour Room
+                                    </p> 
+                                 </div>
+                                
+                                </div>
+                                    
+                              
+                            </div>
+                                                                <a class="btn btn-primary btn-round" data-aos="flip-up" href="#" >More about practice</a>
+
+                        </div>
+                        <div class="col-lg-5 col-md-12">
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="assets/images/why-choose-img.png" alt="">
+    </div>
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="why-choose-us">
+  <div class="container">
+    <div class="row">
+      <div class="section-title col-12" data-aos="fade-up">
+        <h2 class="text-white"><span>Our </span>Facilities</h2>
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-lg-7 col-md-12 p-1">
+        <div class="common-cnt">
+          <!-- THIS is where the individual facility items <div><p>…</p></div> go -->
+        </div>
+        <a class="btn btn-primary btn-round" data-aos="flip-up" href="#">More about practice</a>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Images here -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- Home Why choose us -->
+
+            <!-- Home Support 
+            <div class="support-home text-center xl-slategray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>We provide 24/7 customer support.</h4>
+                            <p>Please feel free to contact us at (01) 234 5678 for emergency case.</p>
+                            <a class="btn btn-primary btn-simple btn-round" href="javascript:void(0);">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!-- Home Support -->
+
+            <!-- Home Blog -->
+            <!-- <div class="home-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title col-12" data-aos="fade-up">
+                            <h2><span>Latest </span>From Blog</h2>
+                            <p>Description text here...</p>
+                        </div>
+                    </div>
+                    <div class="row" data-aos="flip-up">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img src="assets/images/blog-1.png" alt="">
+                                </div>
+                                <div class="blog-cnt">
+                                    <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
+                                    <p>The great explorer of the truth, master builder of human happiness one rejects,
+                                        dislikes[...]</p>
+                                </div>
+                                <div class="blog-info">
+                                    <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
+                                    <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img src="assets/images/blog-2.png" alt="">
+                                </div>
+                                <div class="blog-cnt">
+                                    <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
+                                    <p>The great explorer of the truth, master builder of human happiness one rejects,
+                                        dislikes[...]</p>
+                                </div>
+                                <div class="blog-info">
+                                    <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
+                                    <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img src="assets/images/blog-3.png" alt="">
+                                </div>
+                                <div class="blog-cnt">
+                                    <h5><a href="javascript:void(0);">How to handle your kids’ from Lorem ipsum dolor sit amet</a></h5>
+                                    <p>The great explorer of the truth, master builder of human happiness one rejects,
+                                        dislikes[...]</p>
+                                </div>
+                                <div class="blog-info">
+                                    <span class="blog-date"><i class="zmdi zmdi-calendar"></i> 02 Feb 2018</span>
+                                    <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment ( 25 )</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="home-blog">
+                <div class="container">
+                    <div class="row">
+                    <div class="section-title col-12" data-aos="fade-up">
+                        <h2><span>Latest </span>From Blog</h2>
+                        <p>Description text here...</p>
+                    </div>
+                    </div>
+
+                    <!-- Blog Rows -->
+                    <div class="row" id="blogContainer" data-aos="flip-up">
+                    <!-- Blogs will load dynamically here -->
+                    </div>
+                </div>
+                </div>
+            <!-- Home Blog -->
+
+        </section>
+
+        <!-- start footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="form-group m-b-0">
+                                        <input type="text" value="" placeholder="your name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="form-group m-b-0">
+                                        <input type="text" value="" placeholder="your email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <button class="btn btn-primary btn-round btn-block margin-0">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="fcard about">
+                            <h5 class="title">About Hospitals</h5>
+                            <p>The relentless service of Hospitals in the past 25 years taken health care to the most modern
+                                levels in the region catering to urban & rural.</p>
+                            <p>A Health Care Provider of Western Approach, Hospitals is the most trusted multispecialty
+                                hospital.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="fcard links">
+                            <h5 class="title">Usefull Links</h5>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="doctors.html">Doctor</a></li>
+                                        <li><a href="services.html">Service</a></li>
+                                        <li><a href="facilities.html">Facilities</a></li>
+                                        <li><a href="contact.html">Contactus</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li><a href="javascript:void(0);">Services</a></li>
+                                        <li><a href="javascript:void(0);">Healthy Foods</a></li>
+                                        <li><a href="javascript:void(0);">Appointments</a></li>
+                                        <li><a href="javascript:void(0);">Latest News</a></li>
+                                        <li><a href="javascript:void(0);">Certificates</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="fcard contact links">
+                            <h5 class="title">Contact Details</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="zmdi zmdi-pin"></i>Park Drive, Varick Str NY 10012, USA</li>
+                                <li><i class="zmdi zmdi-email"></i>Getwell@Hospitals.com</li>
+                                <li><i class="zmdi zmdi-phone"></i>(123) 0200 12345 & 7890</li>
+                                <li><i class="zmdi zmdi-time"></i>Mon-Friday: 9am to 18pm</li>
+                                <li><i class="zmdi zmdi-time"></i>Sat-Sunday: 10am to 16pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <small>Copyright &copy; IKYA<a href="index.html" target="_blank">ThemeMakker</a>
+                            </small>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <div class="up"><a href="index.html#header"><i class="zmdi zmdi-caret-up-circle"></i></a></div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="social float-md-right"><a href="index.html"><i class="zmdi zmdi-facebook m-r-10"></i></a> <a
+                                    href="index.html"><i class="zmdi zmdi-twitter m-r-10"></i></a> <a href="index.html"><i
+                                    class="zmdi zmdi-dribbble m-r-10"></i></a> <a href="index.html"><i
+                                    class="zmdi zmdi-behance m-r-10"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- start screpting -->
+    <script src="assets/bundles/libscripts.bundle.js"></script>
+
+    <script src="assets/js/app.js"></script><!-- my js -->
+    <script src="assets/js/countto.js"></script>
+    <!-- Include Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,       
+    spaceBetween: 30,      
+    loop: true,            
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+ 
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {          // Responsive
+      640: { slidesPerView: 1, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 1, spaceBetween: 30 },
+    },
+  });
+
+   fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error loading header:', err));
+
+
+
+
+ 
+const deptMenu = "http://localhost:8081/Specialities";
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadDepartments();
+});
+
+async function loadDepartments() {
+    try {
+        const res = await fetch(`${deptMenu}/all`);
+        if (!res.ok) throw new Error("Failed to fetch departments");
+
+        const departments = await res.json();
+        const menu = document.getElementById("departmentMenu");
+        menu.innerHTML = "";
+
+        if (!departments || departments.length === 0) {
+            menu.innerHTML = `<span class="dropdown-item text-muted">No Departments Found</span>`;
+            return;
+        }
+
+        departments.forEach(dept => {
+            menu.innerHTML += `
+                <a class="dropdown-item" href="department.html?id=${dept.id}">
+                    ${dept.title}
+                </a>
+            `;
+        });
+
+    } catch (err) {
+        console.error("Error loading departments:", err);
+        document.getElementById("departmentMenu").innerHTML = `<span class="dropdown-item text-danger">Error loading departments</span>`;
+    }
+}
+
+
+
+
+// ------------------ About Section ------------------
+const aboutApi = "http://localhost:8081/About/all";
+
+async function loadAboutSection() {
+  try {
+    const res = await fetch(aboutApi);
+    if (!res.ok) throw new Error("Failed to fetch About data");
+    const data = await res.json();
+
+    if (!data || data.length === 0) return;
+
+    // Assuming first record for About Us
+    const about = data[0];
+
+    const container = document.getElementById("aboutUsDynamic");
+
+    container.innerHTML = `
+      <div class="container">
+        <div class="row">
+          <div class="section-title col-12" data-aos="fade-up">
+            <h2><span>${about.title}</span></h2>
+            
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-sm-4">
+            <div class="box-img box-shadow" data-aos="fade-up">
+              <img src="http://localhost:8081${about.image}" alt="${about.title}">
+             
+            </div>
+          </div>
+          <div class="col-lg-7 col-sm-8">
+            <div class="common-cnt" data-aos="fade-up">
+              <div class="section-top">
+                <p class="text-justify">
+                  
+                  ${about.description.replace(/\r\s*\r/g, '<br>')}
+                </p>
+              </div>
+              <a class="btn btn-primary btn-simple btn-round margin-0" href="about.html" data-aos="flip-up">
+                View More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  } catch (err) {
+    console.error("Error loading About section:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadAboutSection);
+
+
+const API_BASE = "http://localhost:8081/Specialities";
+
+async function loadSpecialitiesSection() {
+  try {
+    const res = await fetch(`${API_BASE}/all`);
+    const data = await res.json();
+    const container = document.getElementById("servicesContainer");
+    container.innerHTML = "";
+
+    data.forEach((s, index) => {
+      container.innerHTML += `
+        <div class="col-md-2 col-sm-6">
+          <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
+            <div class="service-icon">
+              <img src="http://localhost:8081${s.icon}" alt="${s.title}" width="70px">
+            </div>
+            <div class="service-cnt">
+              <div class="service-name">${s.title}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  } catch (err) {
+    console.error("Error loading specialities:", err);
+  }
+}
+document.addEventListener("DOMContentLoaded", loadSpecialitiesSection);
+
+
+
+const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)'); 
+
+  function loadTeam() {
+    fetch('http://localhost:8081/doctors/all')
+      .then(res => res.json())
+      .then(data => {
+        teamContainer.innerHTML = ""; // clear existing static members
+        // take only first 4 doctors
+        data.slice(0, 4).forEach((doc, i) => {
+          const duration = 3000 + i * 1000; // same animation logic
+          teamContainer.innerHTML += `
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${duration}">
+                <div class="doctor-pic">
+                  <img src="http://localhost:8081${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
+                </div>
+                <div class="doctor-info">
+                  <h4>${doc.doctorName} <span>${doc.specialization || ''}</span></h4>
+                  <ul class="clearfix">
+                    ${doc.facebook ? `<li><a href="${doc.facebook}" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>` : ''}
+                    ${doc.twitter ? `<li><a href="${doc.twitter}" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>` : ''}
+                    ${doc.instagram ? `<li><a href="${doc.instagram}" target="_blank"><i class="zmdi zmdi-instagram"></i></a></li>` : ''}
+                    ${doc.googlePlus ? `<li><a href="${doc.googlePlus}" target="_blank"><i class="zmdi zmdi-google-plus"></i></a></li>` : ''}
+                  </ul>
+                  <a class="btn btn-simple btn-primary btn-round" href="javascript:void(0);">View More</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      })
+      .catch(err => console.error("Failed to load team:", err));
+  }
+
+  document.addEventListener("DOMContentLoaded", loadTeam);
+
+
+
+
+
+  const facilitiesContainer = document.querySelector('.why-choose-us .common-cnt'); 
+  const swiperWrapper = document.querySelector('.why-choose-us .swiper-wrapper');
+
+  async function loadFacilitiesSection() {
+    try {
+      const res = await fetch('http://localhost:8081/facilities/all');
+      const data = await res.json();
+      
+      // Clear existing static items
+      facilitiesContainer.innerHTML = "";
+      swiperWrapper.innerHTML = "";
+
+      // Create two columns for facility items
+      const col1 = document.createElement('div');
+      col1.className = "section-top";
+      col1.setAttribute('data-aos', 'fade-down');
+
+      const col2 = document.createElement('div');
+      col2.className = "section-top";
+      col2.setAttribute('data-aos', 'fade-down');
+
+      // Divide facilities into two columns
+      data.forEach((fac, i) => {
+        const targetCol = i < Math.ceil(data.length / 2) ? col1 : col2;
+
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <p>
+            <span>
+              <img src="http://localhost:8081${fac.icon || '/uploads/default-icon.png'}" alt="" width="20px">
+            </span> ${fac.title}
+          </p>
+        `;
+        targetCol.appendChild(div);
+
+        // Add swiper image for this facility
+        if(fac.image){
+          const slideDiv = document.createElement('div');
+          slideDiv.className = "swiper-slide";
+          slideDiv.innerHTML = `<img src="http://localhost:8081${fac.image}" alt="${fac.title}">`;
+          swiperWrapper.appendChild(slideDiv);
+        }
+      });
+
+      facilitiesContainer.appendChild(col1);
+      facilitiesContainer.appendChild(col2);
+
+      // Initialize Swiper (or update it if already initialized)
+      if(window.mySwiper){
+        window.mySwiper.update();
+      } else {
+        window.mySwiper = new Swiper('.mySwiper', {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+          autoplay: { delay: 2500, disableOnInteraction: false }
+        });
+      }
+
+    } catch (err) {
+      console.error("Failed to load facilities:", err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadFacilitiesSection);
+
+
+
+
+  const BLOG_API = "http://localhost:8081/Blogs/all";
+
+  document.addEventListener("DOMContentLoaded", loadBlogs);
+
+  async function loadBlogs(){
+    try {
+      const res = await fetch(BLOG_API);
+      const blogs = await res.json();
+
+      const blogContainer = document.getElementById("blogContainer");
+      blogContainer.innerHTML = "";
+
+      blogs.forEach((b, index) => {
+        blogContainer.innerHTML += `
+          <div class="col-lg-4 col-md-6 ${index === 2 ? "d-none d-lg-block" : ""}">
+            <div class="blog-box">
+              <div class="blog-img">
+                <img src="http://localhost:8081${b.image}" alt="${b.title}">
+              </div>
+              <div class="blog-cnt">
+                <h5><a href="javascript:void(0);">${b.title}</a></h5>
+                <p>${b.description ? b.description.substring(0, 100) + "..." : ""}</p>
+              </div>
+              <div class="blog-info">
+                <span class="blog-date"><i class="zmdi zmdi-calendar"></i> ${b.createdOn ? new Date(b.createdOn).toLocaleDateString() : ""}</span>
+                <span class="blog-comment"><i class="zmdi zmdi-comments"></i> Comment (0)</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+    } catch(err){
+      console.error("Error loading blogs:", err);
+    }
+  }
+
+
+
+const heroApi = "http://localhost:8081/Slider";
+
+let currentSlide = 0;
+let autoSlideTimer;
+
+// Load hero slides dynamically
+async function loadHeroSlider() {
+  try {
+    const res = await fetch(`${heroApi}/allSliders`);
+    const sliders = await res.json();
+
+    // Filter ACTIVE sliders only
+    const activeSliders = sliders.filter(s => s.status === "ACTIVE");
+
+    const sliderContainer = document.getElementById("heroSlider");
+    const dotsContainer = document.getElementById("heroDots");
+
+    // Clear old slides/dots
+    sliderContainer.querySelectorAll(".hero-slide").forEach(el => el.remove());
+    dotsContainer.innerHTML = "";
+
+    // Inject slides
+    activeSliders.forEach((s, index) => {
+      const slide = document.createElement("div");
+      slide.className = "hero-slide" + (index === 0 ? " active" : "");
+      slide.style.backgroundImage = `url('http://localhost:8081${s.images}')`;
+      slide.innerHTML = `
+        <div class="hero-text">
+      <h2>${s.title}</h2>
+      <p>${s.subTitle}</p>
+    
+    </div>
+      `;
+      sliderContainer.insertBefore(slide, dotsContainer);
+
+      // Create dot only if more than 1 image
+      if (activeSliders.length > 1) {
+        const dot = document.createElement("span");
+        if (index === 0) dot.classList.add("active");
+        dot.onclick = () => goToSlide(index);
+        dotsContainer.appendChild(dot);
+      }
+    });
+
+    // If more than 1 image → start auto sliding
+    if (activeSliders.length > 1) {
+      startAutoSlide();
+    } else {
+      clearInterval(autoSlideTimer); 
+    }
+
+  } catch (err) {
+    console.error("Error fetching sliders:", err);
+  }
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll("#heroDots span");
+
+  slides.forEach((s, i) => s.classList.toggle("active", i === index));
+  dots.forEach((d, i) => d.classList.toggle("active", i === index));
+
+  currentSlide = index;
+}
+
+function goToSlide(index) {
+  showSlide(index);
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll(".hero-slide");
+  if (slides.length <= 1) return; 
+  let next = (currentSlide + 1) % slides.length;
+  showSlide(next);
+}
+
+function startAutoSlide() {
+  clearInterval(autoSlideTimer);
+  autoSlideTimer = setInterval(nextSlide, 2000);
+}
+
+
+loadHeroSlider();
+
+
+
+
+const doctorApi = "http://localhost:8081/doctors/all";
+const appointmentApi = "http://localhost:8081/api/appointments";
+const otpApi = "http://localhost:8081/api/otp";
+const paymentApi = "http://localhost:8081/api/payment";
+
+let allDoctors = [];
+let currentAppointmentId = null;
+
+// ----------------- DOM Elements -----------------
+const specializationSelect = document.getElementById("specialization");
+const appointmentDateInput = document.getElementById("appointmentDate");
+const appointmentTimeInput = document.getElementById("appointmentTime");
+const doctorSelect = document.getElementById("doctorId");
+const bookBtn = document.getElementById("bookBtn");
+
+const modal = document.getElementById("patientModal");
+const closeModal = document.getElementById("closeModal");
+const generateOtpBtn = document.getElementById("generateOtpBtn");
+const verifyOtpBtn = document.getElementById("verifyOtpBtn");
+const confirmBtn = document.getElementById("confirmBtn");
+const otpSection = document.getElementById("otpSection");
+const otpInput = document.getElementById("otpInput");
+
+const appointmentNameInput = document.getElementById("appointmentName");
+const appointmentMobileInput = document.getElementById("appointmentMobile");
+const altPhoneInput = document.getElementById("altPhone");
+const genderInput = document.getElementById("gender");
+const ageInput = document.getElementById("age");
+const emailInput = document.getElementById("email");
+const locationInput = document.getElementById("location");
+
+// ----------------- Load Specializations -----------------
+
+
+// ----------------- On Page Load -----------------
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadSpecializations();
+  filterDoctors();
+});
+
+async function loadSpecializations() {
+  try {
+    const res = await fetch(doctorApi);
+    allDoctors = await res.json();
+
+    const specializations = [...new Set(allDoctors.map(d => d.specialization.trim()))];
+    specializationSelect.innerHTML = '<option value="">-- Select Specialization --</option>';
+    specializations.forEach(spec => {
+      specializationSelect.innerHTML += `<option value="${spec}">${spec}</option>`;
+    });
+  } catch (err) {
+    console.error("Error loading doctors:", err);
+  }
+}
+
+// ----------------- Time Parser (AM/PM) -----------------
+function toMinutes12(timeStr) {
+  if (!timeStr) return null;
+
+  timeStr = timeStr.toUpperCase().replace(/\s+/g, "");
+  const match = timeStr.match(/^(\d{1,2}):(\d{2})(AM|PM)$/);
+  if (!match) return null;
+
+  let hours = parseInt(match[1], 10);
+  const minutes = parseInt(match[2], 10);
+  const period = match[3];
+
+  if (period === "PM" && hours !== 12) hours += 12;
+  if (period === "AM" && hours === 12) hours = 0;
+
+  return hours * 60 + minutes;
+}
+
+// ----------------- Filter Doctors -----------------
+function filterDoctors() {
+  const spec = specializationSelect.value;
+  const date = appointmentDateInput.value;
+  const time = appointmentTimeInput.value;
+
+  doctorSelect.innerHTML = '<option value="">-- Select Doctor --</option>';
+  if (!spec || !allDoctors.length) {
+    bookBtn.disabled = true;
+    return;
+  }
+
+  // Filter by specialization
+  const filtered = allDoctors.filter(
+    d => d.specialization.trim().toLowerCase() === spec.trim().toLowerCase()
+  );
+
+  // Day & Time from form
+  const dayOfWeek = date ? new Date(date).toLocaleDateString("en-US", { weekday: "short" }) : null;
+  const selectedMinutes = time ? toMinutes12(convertTo12Hour(time)) : null;
+
+  console.log("Filtering for:", spec, dayOfWeek, selectedMinutes);
+
+  filtered.forEach(d => {
+    let isAvailable = true;
+
+    // ---------- Day Check ----------
+    if (dayOfWeek && d.availableDays) {
+      const doctorDays = d.availableDays.split(",").map(day => day.trim());
+      if (!doctorDays.includes(dayOfWeek)) {
+        isAvailable = false;
+      }
+    }
+
+    // ---------- Time Check ----------
+    if (selectedMinutes !== null && d.availableTime) {
+      const slots = d.availableTime.split(/\n|,/);
+      let inAnySlot = false;
+
+      for (const slot of slots) {
+        const [start, end] = slot.split("-").map(s => s.trim());
+        const startMin = toMinutes12(start);
+        const endMin = toMinutes12(end);
+        if (startMin !== null && endMin !== null) {
+          if (selectedMinutes >= startMin && selectedMinutes <= endMin) {
+            inAnySlot = true;
+            break;
+          }
+        }
+      }
+
+      if (!inAnySlot) isAvailable = false;
+    }
+
+    if (isAvailable) {
+      doctorSelect.innerHTML += `<option value="${d.doctorId}">${d.doctorName}</option>`;
+    }
+  });
+
+  validateForm();
+}
+
+// ----------------- Convert 24hr Input to 12hr (for comparison) -----------------
+function convertTo12Hour(timeStr) {
+  if (!timeStr) return "";
+  let [hours, minutes] = timeStr.split(":").map(Number);
+  let period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  return `${hours}:${minutes.toString().padStart(2, "0")}${period}`;
+}
+
+// ----------------- Validate Form -----------------
+function validateForm() {
+  const date = appointmentDateInput.value;
+  const time = appointmentTimeInput.value;
+  const doctor = doctorSelect.value;
+  bookBtn.disabled = !(date && time && doctor);
+}
+
+// ----------------- Event Listeners -----------------
+specializationSelect.addEventListener("change", filterDoctors);
+appointmentDateInput.addEventListener("change", filterDoctors);
+appointmentTimeInput.addEventListener("change", filterDoctors);
+doctorSelect.addEventListener("change", validateForm);
+
+// ----------------- Book Appointment -----------------
+bookBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const appointment = {
+        doctorId: doctorSelect.value,
+        appointmentDate: appointmentDateInput.value,
+        appointmentTime: appointmentTimeInput.value,
+        mode: "ONLINE",
+        patientName: appointmentNameInput.value,
+        phoneNumber: appointmentMobileInput.value
+    };
+
+      const res = await fetch(appointmentApi, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(appointment)
+        });
+    const data = await res.json();
+    currentAppointmentId = data.appointmentId;
+    modal.style.display = "block"; // ✅
+
+});
+
+
+
+// ----------------- Modal Handling -----------------
+closeModal.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+
+// ----------------- OTP Handling -----------------
+generateOtpBtn.addEventListener("click", async () => {
+    const email = emailInput.value;
+    if (!email) return alert("Enter patient email!");
+
+    try {
+        const res = await fetch(`${otpApi}/send?email=${email}`, { method: "POST" });
+        if (!res.ok) throw new Error("OTP send failed");
+        alert("OTP sent to your email!");
+        otpSection.style.display = "block";
+        generateOtpBtn.disabled = true;
+    } catch (err) {
+        console.error(err);
+        alert("Error sending OTP!");
+    }
+});
+
+verifyOtpBtn.addEventListener("click", async () => {
+    const email = emailInput.value;
+    const otp = otpInput.value;
+    if (!otp) return alert("Enter OTP!");
+
+    try {
+        const res = await fetch(`${otpApi}/verify?email=${email}&otp=${otp}`, { method: "POST" });
+        const isValid = await res.json();
+        if (isValid) {
+            alert("OTP verified!");
+            confirmBtn.disabled = false;
+            otpSection.style.display = "none";
+        } else {
+            alert("Incorrect OTP!");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Error verifying OTP!");
+    }
+});
+
+// ----------------- Confirm Appointment & Payment -----------------
+
+document.getElementById("patientForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (confirmBtn.disabled) return alert("Verify OTP first!");
+    if (!currentAppointmentId) return alert("No appointment to update!");
+
+    const appointmentData = {
+        doctorId: doctorSelect.value,
+        appointmentDate: appointmentDateInput.value,
+        appointmentTime: appointmentTimeInput.value,
+        mode: "ONLINE",
+        patientName: appointmentNameInput.value,
+        phoneNumber: appointmentMobileInput.value,
+        altPhone: altPhoneInput.value,
+        gender: genderInput.value,
+        age: ageInput.value,
+        email: emailInput.value,
+        location: locationInput.value
+    };
+
+    try {
+        const res = await fetch(`${appointmentApi}/${currentAppointmentId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(appointmentData)
+        });
+
+        if (!res.ok) throw new Error(`Server error ${res.status}`);
+        alert("Appointment updated with patient details!");
+        confirmBtn.disabled = false; // enable for payment
+    } catch (err) {
+        console.error(err);
+        alert("Error updating appointment!");
+    }
+});
+
+// ----------------- Razorpay Payment -----------------
+ confirmBtn.addEventListener('click', async () => {
+    if (!currentAppointmentId) return alert('No appointment to pay');
+
+    // ✅ Show confirmation before opening Razorpay
+    const proceed = confirm("⚠️ Please note: Amount is non-refundable. Do you want to proceed with payment?");
+    if (!proceed) return; // User canceled
+
+    try {
+      // Create order on server: pass appointmentId (server reads fee from appointment)
+      const res = await fetch(`${paymentApi}/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ appointmentId: currentAppointmentId })
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        console.error('create-order failed response:', text);
+        throw new Error('Create order failed');
+      }
+      const order = await res.json();
+      // open checkout
+      const options = {
+        key: order.key,             // Razorpay key from backend
+        amount: order.amount,      // amount in paise
+        currency: order.currency,
+        name: "IKYA Hospital",
+        description: "Appointment Payment",
+        order_id: order.orderId,
+        handler: async function (response) {
+          // verify on server and store payment
+          const verifyRes = await fetch(`${paymentApi}/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...response, appointmentId: currentAppointmentId })
+          });
+          if (verifyRes.ok) {
+            alert('Payment successful & stored. Thank you!');
+            modal.style.display = 'none';
+            // clear fields
+            document.getElementById('patientForm').reset();
+            currentAppointmentId = null;
+            confirmBtn.disabled = true;
+            generateOtpBtn.disabled = false;
+          } else {
+            const txt = await verifyRes.text();
+            console.error('verify failed:', txt);
+            alert('Payment verification failed. Contact admin.');
+          }
+        },
+        prefill: {
+          name: appointmentNameInput.value,
+          email: emailInput.value,
+          contact: appointmentMobileInput.value
+        },
+        theme: { color: '#0d6efd' }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+
+    } catch (err) {
+      console.error(err);
+      alert('Payment initialization failed. See console for details.');
+    }
+  });
+
+
+
+
+
+</script>
+
+
+    </body>
+    </html>

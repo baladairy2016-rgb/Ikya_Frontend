@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facilities Admin Panel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+  h2 { text-align: center; margin-bottom: 30px; color: #0d6efd; }
+  .card { padding: 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); margin-bottom: 40px; }
+  .file-preview { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border:1px solid #dee2e6; }
+  table { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+  th { background:#0d6efd; color:#fff; font-weight:500; text-transform:uppercase; font-size:13px; }
+  td { vertical-align:middle; font-size:14px; }
+  tr:hover { background:#f1f5f9; }
+  .btn i { margin-right: 5px; }
+  @media(max-width:768px){ td, th { font-size:12px; } .file-preview { width:40px; height:40px; } }
+</style>
+</head>
+<body class="container py-4">
+
+<h2>🏥 Facilities Management</h2>
+
+<!-- Form Card -->
+<div class="card">
+  <form id="facilitiesForm">
+    <input type="hidden" id="facilityId">
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <input type="text" id="title" placeholder="Facility Title" class="form-control" required>
+      </div>
+      <div class="col-md-4">
+        <input type="file" id="imageFile" accept="image/*" class="form-control">
+        <img id="imagePreview" src="" alt="Image Preview" class="file-preview mt-2 d-none">
+      </div>
+      <div class="col-md-4">
+        <input type="file" id="iconFile" accept="image/*" class="form-control">
+        <img id="iconPreview" src="" alt="Icon Preview" class="file-preview mt-2 d-none">
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-2">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Facility</button>
+      <button type="button" class="btn btn-secondary" id="resetBtn"><i class="fa fa-refresh"></i> Reset</button>
+    </div>
+  </form>
+</div>
+
+<!-- Table Card -->
+<div class="card">
+  <div class="table-responsive">
+    <table class="table table-bordered" id="facilitiesTable">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Icon</th>
+          <th>Created On</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const API_BASE = "http://localhost:8081/facilities";
+
+  // Preview images
+  const imageFile = document.getElementById("imageFile");
+  const iconFile = document.getElementById("iconFile");
+  const imagePreview = document.getElementById("imagePreview");
+  const iconPreview = document.getElementById("iconPreview");
+
+  imageFile.addEventListener("change", e=>{
+    if(e.target.files[0]){
+      imagePreview.src = URL.createObjectURL(e.target.files[0]);
+      imagePreview.classList.remove("d-none");
+    } else { imagePreview.classList.add("d-none"); }
+  });
+
+  iconFile.addEventListener("change", e=>{
+    if(e.target.files[0]){
+      iconPreview.src = URL.createObjectURL(e.target.files[0]);
+      iconPreview.classList.remove("d-none");
+    } else { iconPreview.classList.add("d-none"); }
+  });
+
+  // Load facilities
+  async function loadFacilities(){
+    try{
+      const res = await fetch(`${API_BASE}/all`);
+      const data = await res.json();
+      const tbody = document.querySelector("#facilitiesTable tbody");
+      tbody.innerHTML = "";
+
+      data.forEach(fac=>{
+        tbody.innerHTML += `
+          <tr>
+            <td>${fac.id}</td>
+            <td>${fac.title}</td>
+            <td>${fac.image ? `<img src="http://localhost:8081${fac.image}" class="file-preview">` : ""}</td>
+            <td>${fac.icon ? `<img src="http://localhost:8081${fac.icon}" class="file-preview">` : ""}</td>
+            <td>${fac.createdOn || ""}</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-1" onclick='editFacility(${JSON.stringify(fac)})'><i class="fa fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger" onclick="deleteFacility(${fac.id})"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        `;
+      });
+    }catch(err){ console.error(err); }
+  }
+
+  function editFacility(fac){
+    document.getElementById("facilityId").value = fac.id;
+    document.getElementById("title").value = fac.title;
+
+    if(fac.image){
+      imagePreview.src = `http://localhost:8081${fac.image}`;
+      imagePreview.classList.remove("d-none");
+    }
+    if(fac.icon){
+      iconPreview.src = `http://localhost:8081${fac.icon}`;
+      iconPreview.classList.remove("d-none");
+    }
+  }
+
+  async function deleteFacility(id){
+    if(!confirm("Delete this facility?")) return;
+    try{
+      await fetch(`${API_BASE}/delete/${id}`,{method:"DELETE"});
+      alert("Facility deleted!");
+      loadFacilities();
+    }catch(err){ console.error(err); }
+  }
+
+  document.getElementById("facilitiesForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    const facilityId = document.getElementById("facilityId").value;
+    const title = document.getElementById("title").value;
+
+    const formData = new FormData();
+    formData.append("title", title);
+    if(imageFile.files[0]) formData.append("imageFile", imageFile.files[0]);
+    if(iconFile.files[0]) formData.append("iconFile", iconFile.files[0]);
+
+    const method = facilityId ? "PUT" : "POST";
+    const url = facilityId ? `${API_BASE}/update/${facilityId}` : `${API_BASE}/add`;
+
+    try{
+      await fetch(url, {method, body:formData});
+      alert("Facility saved successfully!");
+      this.reset();
+      document.getElementById("facilityId").value = "";
+      imagePreview.classList.add("d-none");
+      iconPreview.classList.add("d-none");
+      loadFacilities();
+    }catch(err){ console.error(err); alert("Failed to save facility."); }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", ()=>{
+    document.getElementById("facilitiesForm").reset();
+    document.getElementById("facilityId").value = "";
+    imagePreview.classList.add("d-none");
+    iconPreview.classList.add("d-none");
+  });
+
+  document.addEventListener("DOMContentLoaded", loadFacilities);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Specialities Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+    h2 { text-align: center; margin-bottom: 30px; color: #0d6efd; }
+    .card { padding: 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); margin-bottom: 40px; }
+    .file-preview { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid #dee2e6; }
+    table { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    th { background: #0d6efd; color: #fff; font-weight: 500; text-transform: uppercase; font-size: 13px; }
+    td { vertical-align: middle; font-size: 14px; }
+    tr:hover { background: #f1f5f9; }
+    .btn i { margin-right: 5px; }
+  </style>
+</head>
+<body class="container py-4">
+
+<h2>⭐ Specialities Management</h2>
+
+<!-- Form -->
+<div class="card">
+  <form id="specialityForm">
+    <input type="hidden" id="specialityId">
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <input type="text" id="title" placeholder="Speciality Title" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <input type="file" id="iconFile" accept="image/*" class="form-control">
+        <img id="iconPreview" src="" alt="Icon Preview" class="file-preview mt-2 d-none">
+      </div>
+      <div class="col-md-6">
+        <input type="file" id="imageFile" accept="image/*" class="form-control">
+        <img id="imagePreview" src="" alt="Image Preview" class="file-preview mt-2 d-none">
+      </div>
+      <div class="col-md-6">
+        <input type="file" id="image1File" accept="image/*" class="form-control">
+        <img id="image1Preview" src="" alt="Image1 Preview" class="file-preview mt-2 d-none">
+      </div>
+      <div class="col-md-12">
+        <textarea id="description" placeholder="Description" class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center gap-2">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Speciality</button>
+      <button type="button" class="btn btn-secondary" id="resetBtn"><i class="fa fa-refresh"></i> Reset</button>
+    </div>
+  </form>
+</div>
+
+<!-- Table -->
+<div class="card">
+  <div class="table-responsive">
+    <table class="table table-bordered" id="specialitiesTable">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Icon</th>
+          <th>Image</th>
+          <th>Image1</th>
+          <th>Description</th>
+          <th>Created On</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const API_BASE = "http://localhost:8081/Specialities";
+
+  const iconFile = document.getElementById("iconFile");
+  const imageFile = document.getElementById("imageFile");
+  const image1File = document.getElementById("image1File");
+
+  const iconPreview = document.getElementById("iconPreview");
+  const imagePreview = document.getElementById("imagePreview");
+  const image1Preview = document.getElementById("image1Preview");
+
+  function previewFile(e, imgEl) {
+    if (e.target.files[0]) {
+      imgEl.src = URL.createObjectURL(e.target.files[0]);
+      imgEl.classList.remove("d-none");
+    } else {
+      imgEl.classList.add("d-none");
+    }
+  }
+  iconFile.addEventListener("change", e => previewFile(e, iconPreview));
+  imageFile.addEventListener("change", e => previewFile(e, imagePreview));
+  image1File.addEventListener("change", e => previewFile(e, image1Preview));
+
+  async function loadSpecialities() {
+    const res = await fetch(`${API_BASE}/all`);
+    const data = await res.json();
+    const tbody = document.querySelector("#specialitiesTable tbody");
+    tbody.innerHTML = "";
+
+    data.forEach(s => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${s.id}</td>
+          <td>${s.title}</td>
+          <td>${s.icon ? `<img src="http://localhost:8081${s.icon}" class="file-preview">` : ""}</td>
+          <td>${s.image ? `<img src="http://localhost:8081${s.image}" class="file-preview">` : ""}</td>
+          <td>${s.image1 ? `<img src="http://localhost:8081${s.image1}" class="file-preview">` : ""}</td>
+          <td>${s.description || ""}</td>
+          <td>${s.createdOn ? new Date(s.createdOn).toLocaleString() : ""}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-1" onclick="editSpeciality(${s.id})"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger" onclick="deleteSpeciality(${s.id})"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      `;
+    });
+  }
+
+  async function editSpeciality(id) {
+    const res = await fetch(`${API_BASE}/${id}`);
+    const s = await res.json();
+
+    document.getElementById("specialityId").value = s.id;
+    document.getElementById("title").value = s.title;
+    document.getElementById("description").value = s.description || "";
+
+    if (s.icon) { iconPreview.src = `http://localhost:8081${s.icon}`; iconPreview.classList.remove("d-none"); }
+    if (s.image) { imagePreview.src = `http://localhost:8081${s.image}`; imagePreview.classList.remove("d-none"); }
+    if (s.image1) { image1Preview.src = `http://localhost:8081${s.image1}`; image1Preview.classList.remove("d-none"); }
+  }
+
+  async function deleteSpeciality(id) {
+    if (!confirm("Delete this speciality?")) return;
+    await fetch(`${API_BASE}/delete/${id}`, { method: "DELETE" });
+    alert("Speciality deleted!");
+    loadSpecialities();
+  }
+
+  document.getElementById("specialityForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const specialityId = document.getElementById("specialityId").value;
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+
+    const formData = new FormData();
+  formData.append("title", title);
+  formData.append("description", description);
+  if (iconFile.files[0]) formData.append("iconFile", iconFile.files[0]);
+  if (imageFile.files[0]) formData.append("image", imageFile.files[0]);
+  if (image1File.files[0]) formData.append("image1", image1File.files[0]);
+
+
+    const method = specialityId ? "PUT" : "POST";
+    const url = specialityId ? `${API_BASE}/update/${specialityId}` : `${API_BASE}/add`;
+
+    await fetch(url, { method, body: formData });
+    alert("Speciality saved successfully!");
+    this.reset();
+    document.getElementById("specialityId").value = "";
+    [iconPreview, imagePreview, image1Preview].forEach(img => img.classList.add("d-none"));
+    loadSpecialities();
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    document.getElementById("specialityForm").reset();
+    document.getElementById("specialityId").value = "";
+    [iconPreview, imagePreview, image1Preview].forEach(img => img.classList.add("d-none"));
+  });
+
+  document.addEventListener("DOMContentLoaded", loadSpecialities);
+</script>
+</body>
+</html>
