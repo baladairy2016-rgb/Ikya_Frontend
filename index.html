@@ -1652,16 +1652,38 @@ generateOtpBtn.addEventListener("click", async () => {
     if (!email) return alert("Enter patient email!");
 
     try {
-        const res = await fetch(`${otpApi}/send?email=${email}`, { method: "POST" });
-        if (!res.ok) throw new Error("OTP send failed");
+        const res = await fetch(`${otpApi}/send?email=${encodeURIComponent(email)}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" } // even though no body
+        });
+
+        if (!res.ok) throw new Error(await res.text());
+
         alert("OTP sent to your email!");
         otpSection.style.display = "block";
         generateOtpBtn.disabled = true;
     } catch (err) {
-        console.error(err);
+        console.error("Error sending OTP:", err);
         alert("Error sending OTP!");
     }
 });
+
+
+// generateOtpBtn.addEventListener("click", async () => {
+//     const email = emailInput.value;
+//     if (!email) return alert("Enter patient email!");
+
+//     try {
+//         const res = await fetch(`${otpApi}/send?email=${email}`, { method: "POST" });
+//         if (!res.ok) throw new Error("OTP send failed");
+//         alert("OTP sent to your email!");
+//         otpSection.style.display = "block";
+//         generateOtpBtn.disabled = true;
+//     } catch (err) {
+//         console.error(err);
+//         alert("Error sending OTP!");
+//     }
+// });
 
 verifyOtpBtn.addEventListener("click", async () => {
     const email = emailInput.value;
@@ -1706,10 +1728,15 @@ document.getElementById("patientForm").addEventListener("submit", async (e) => {
     };
 
     try {
-        const res = await fetch(`${appointmentApi}/${currentAppointmentId}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(appointmentData)
+        // const res = await fetch(`${appointmentApi}/${currentAppointmentId}`, {
+        //     method: "PUT",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(appointmentData)
+        // });
+
+        const res = await fetch(`${otpApi}/verify?email=${encodeURIComponent(email)}&otp=${otp}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" }
         });
 
         if (!res.ok) throw new Error(`Server error ${res.status}`);
