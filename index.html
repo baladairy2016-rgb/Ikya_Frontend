@@ -1098,7 +1098,7 @@ background-color: #005f99;
 
 
  
-const deptMenu = "https://ikya-backend-3.onrender.com/Specialities";
+const deptMenu = "https://ikya-backend-4.onrender.com/Specialities";
 
 document.addEventListener("DOMContentLoaded", () => {
     loadDepartments();
@@ -1136,7 +1136,7 @@ async function loadDepartments() {
 
 
 // ------------------ About Section ------------------
-const aboutApi = "https://ikya-backend-3.onrender.com/About/all";
+const aboutApi = "https://ikya-backend-4.onrender.com/About/all";
 
 async function loadAboutSection() {
   try {
@@ -1162,7 +1162,7 @@ async function loadAboutSection() {
         <div class="row justify-content-between">
           <div class="col-lg-4 col-sm-4">
             <div class="box-img box-shadow" data-aos="fade-up">
-              <img src="https://ikya-backend-3.onrender.com${about.image}" alt="${about.title}">
+              <img src="https://ikya-backend-4.onrender.com${about.image}" alt="${about.title}">
              
             </div>
           </div>
@@ -1190,7 +1190,7 @@ async function loadAboutSection() {
 document.addEventListener("DOMContentLoaded", loadAboutSection);
 
 
-const API_BASE = "https://ikya-backend-3.onrender.com/Specialities";
+const API_BASE = "https://ikya-backend-4.onrender.com/Specialities";
 
 async function loadSpecialitiesSection() {
   try {
@@ -1204,7 +1204,7 @@ async function loadSpecialitiesSection() {
         <div class="col-md-2 col-sm-6">
           <div class="service-box" data-aos="fade-up" data-aos-duration="3000">
             <div class="service-icon">
-              <img src="https://ikya-backend-3.onrender.com${s.icon}" alt="${s.title}" width="70px">
+              <img src="https://ikya-backend-4.onrender.com${s.icon}" alt="${s.title}" width="70px">
             </div>
             <div class="service-cnt">
               <div class="service-name">${s.title}</div>
@@ -1224,7 +1224,7 @@ document.addEventListener("DOMContentLoaded", loadSpecialitiesSection);
 const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)'); 
 
   function loadTeam() {
-    fetch('https://ikya-backend-3.onrender.com/doctors/all')
+    fetch('https://ikya-backend-4.onrender.com/doctors/all')
       .then(res => res.json())
       .then(data => {
         teamContainer.innerHTML = ""; // clear existing static members
@@ -1235,7 +1235,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${duration}">
                 <div class="doctor-pic">
-                  <img src="https://ikya-backend-3.onrender.com${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
+                  <img src="https://ikya-backend-4.onrender.com${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
                 </div>
                 <div class="doctor-info">
                   <h4>${doc.doctorName} <span>${doc.specialization || ''}</span></h4>
@@ -1267,7 +1267,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
 
   async function loadFacilitiesSection() {
     try {
-      const res = await fetch('https://ikya-backend-3.onrender.com/facilities/all');
+      const res = await fetch('https://ikya-backend-4.onrender.com/facilities/all');
       const data = await res.json();
       
       // Clear existing static items
@@ -1291,7 +1291,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
         div.innerHTML = `
           <p>
             <span>
-              <img src="https://ikya-backend-3.onrender.com${fac.icon || '/uploads/default-icon.png'}" alt="" width="20px">
+              <img src="https://ikya-backend-4.onrender.com${fac.icon || '/uploads/default-icon.png'}" alt="" width="20px">
             </span> ${fac.title}
           </p>
         `;
@@ -1301,7 +1301,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
         if(fac.image){
           const slideDiv = document.createElement('div');
           slideDiv.className = "swiper-slide";
-          slideDiv.innerHTML = `<img src="https://ikya-backend-3.onrender.com${fac.image}" alt="${fac.title}">`;
+          slideDiv.innerHTML = `<img src="https://ikya-backend-4.onrender.com${fac.image}" alt="${fac.title}">`;
           swiperWrapper.appendChild(slideDiv);
         }
       });
@@ -1332,7 +1332,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
 
 
 
-  const BLOG_API = "https://ikya-backend-3.onrender.com/Blogs/all";
+  const BLOG_API = "https://ikya-backend-4.onrender.com/Blogs/all";
 
   document.addEventListener("DOMContentLoaded", loadBlogs);
 
@@ -1349,7 +1349,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
           <div class="col-lg-4 col-md-6 ${index === 2 ? "d-none d-lg-block" : ""}">
             <div class="blog-box">
               <div class="blog-img">
-                <img src="https://ikya-backend-3.onrender.com${b.image}" alt="${b.title}">
+                <img src="https://ikya-backend-4.onrender.com${b.image}" alt="${b.title}">
               </div>
               <div class="blog-cnt">
                 <h5><a href="javascript:void(0);">${b.title}</a></h5>
@@ -1371,7 +1371,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)');
 
 
 
-const heroApi = "https://ikya-backend-3.onrender.com/Slider";
+const heroApi = "https://ikya-backend-4.onrender.com/Slider";
 
 let currentSlide = 0;
 let autoSlideTimer;
@@ -1396,7 +1396,7 @@ async function loadHeroSlider() {
     activeSliders.forEach((s, index) => {
       const slide = document.createElement("div");
       slide.className = "hero-slide" + (index === 0 ? " active" : "");
-      slide.style.backgroundImage = `url('https://ikya-backend-3.onrender.com${s.images}')`;
+      slide.style.backgroundImage = `url('https://ikya-backend-4.onrender.com${s.images}')`;
       slide.innerHTML = `
         <div class="hero-text">
       <h2>${s.title}</h2>
@@ -1459,10 +1459,10 @@ loadHeroSlider();
 
 
 
-const doctorApi = "https://ikya-backend-3.onrender.com/doctors/all";
-const appointmentApi = "https://ikya-backend-3.onrender.com/api/appointments";
-const otpApi = "https://ikya-backend-3.onrender.com/api/otp";
-const paymentApi = "https://ikya-backend-3.onrender.com/api/payment";
+const doctorApi = "https://ikya-backend-4.onrender.com/doctors/all";
+const appointmentApi = "https://ikya-backend-4.onrender.com/api/appointments";
+const otpApi = "https://ikya-backend-4.onrender.com/api/otp";
+const paymentApi = "https://ikya-backend-4.onrender.com/api/payment";
 
 let allDoctors = [];
 let currentAppointmentId = null;
@@ -1652,38 +1652,16 @@ generateOtpBtn.addEventListener("click", async () => {
     if (!email) return alert("Enter patient email!");
 
     try {
-        const res = await fetch(`${otpApi}/send?email=${encodeURIComponent(email)}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" } // even though no body
-        });
-
-        if (!res.ok) throw new Error(await res.text());
-
+        const res = await fetch(`${otpApi}/send?email=${email}`, { method: "POST" });
+        if (!res.ok) throw new Error("OTP send failed");
         alert("OTP sent to your email!");
         otpSection.style.display = "block";
         generateOtpBtn.disabled = true;
     } catch (err) {
-        console.error("Error sending OTP:", err);
+        console.error(err);
         alert("Error sending OTP!");
     }
 });
-
-
-// generateOtpBtn.addEventListener("click", async () => {
-//     const email = emailInput.value;
-//     if (!email) return alert("Enter patient email!");
-
-//     try {
-//         const res = await fetch(`${otpApi}/send?email=${email}`, { method: "POST" });
-//         if (!res.ok) throw new Error("OTP send failed");
-//         alert("OTP sent to your email!");
-//         otpSection.style.display = "block";
-//         generateOtpBtn.disabled = true;
-//     } catch (err) {
-//         console.error(err);
-//         alert("Error sending OTP!");
-//     }
-// });
 
 verifyOtpBtn.addEventListener("click", async () => {
     const email = emailInput.value;
@@ -1728,15 +1706,10 @@ document.getElementById("patientForm").addEventListener("submit", async (e) => {
     };
 
     try {
-        // const res = await fetch(`${appointmentApi}/${currentAppointmentId}`, {
-        //     method: "PUT",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(appointmentData)
-        // });
-
-        const res = await fetch(`${otpApi}/verify?email=${encodeURIComponent(email)}&otp=${otp}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" }
+        const res = await fetch(`${appointmentApi}/${currentAppointmentId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(appointmentData)
         });
 
         if (!res.ok) throw new Error(`Server error ${res.status}`);

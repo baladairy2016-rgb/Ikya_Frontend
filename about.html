@@ -381,7 +381,7 @@ background-color: #fff;
       document.getElementById("header-placeholder").innerHTML = data;
     });
 
-    const aboutApi = "https://ikya-backend-3.onrender.com/About/all";
+    const aboutApi = "https://ikya-backend-4.onrender.com/About/all";
 
 async function loadAboutUs() {
     try {
@@ -406,7 +406,7 @@ async function loadAboutUs() {
             <div class="row justify-content-between">
                 <div class="col-md-4 col-sm-6">
                     <div class="box-img box-shadow" data-aos="fade-up">
-                        <img src="https://ikya-backend-3.onrender.com${about.image}" alt="${about.title}">
+                        <img src="https://ikya-backend-4.onrender.com${about.image}" alt="${about.title}">
                        
                     </div>
                 </div>
@@ -434,7 +434,7 @@ document.addEventListener("DOMContentLoaded", loadAboutUs);
 
 
 
-  const API_BASE = "https://ikya-backend-3.onrender.com/WhyChooseUs";
+  const API_BASE = "https://ikya-backend-4.onrender.com/WhyChooseUs";
 
 document.addEventListener("DOMContentLoaded", loadChooseUs);
 
@@ -453,7 +453,7 @@ data.forEach((s) => {
         <div class="icon-wrapper me-3">
           ${
             s.icon
-              ? `<img src="https://ikya-backend-3.onrender.com${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
+              ? `<img src="https://ikya-backend-4.onrender.com${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
               : `<i class="zmdi zmdi-star default-icon"></i>`
           }
         </div>
@@ -476,7 +476,7 @@ data.forEach((s) => {
 
 
  
-const deptMenu = "https://ikya-backend-3.onrender.com/Specialities";
+const deptMenu = "https://ikya-backend-4.onrender.com/Specialities";
 
 document.addEventListener("DOMContentLoaded", () => {
     loadDepartments();
@@ -515,7 +515,7 @@ async function loadDepartments() {
 const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)'); // the row holding team members
 
   function loadTeam() {
-    fetch('https://ikya-backend-3.onrender.com/doctors/all')
+    fetch('https://ikya-backend-4.onrender.com/doctors/all')
       .then(res => res.json())
       .then(data => {
         teamContainer.innerHTML = ""; // clear existing static members
@@ -526,7 +526,7 @@ const teamContainer = document.querySelector('.our-team .row:nth-of-type(2)'); /
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${duration}">
                 <div class="doctor-pic">
-                  <img src="https://ikya-backend-3.onrender.com${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
+                  <img src="https://ikya-backend-4.onrender.com${doc.profileImage || '/uploads/default.png'}" alt="${doc.doctorName}">
                 </div>
                 <div class="doctor-info">
                   <h4>${doc.doctorName} <span>${doc.specialization || ''}</span></h4>

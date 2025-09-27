@@ -574,7 +574,7 @@ background-color: #fff;
 </script>
 
 <script>
-const API_BASE = "https://ikya-backend-3.onrender.com/Services";
+const API_BASE = "https://ikya-backend-4.onrender.com/Services";
 
 async function loadServices() {
   try {
@@ -598,7 +598,7 @@ async function loadServices() {
                 </div>
               </div>
               <div class="col-lg-3">
-                <img src="https://ikya-backend-3.onrender.com${service.image}" class="rounded-class" alt="${service.serviceName}">
+                <img src="https://ikya-backend-4.onrender.com${service.image}" class="rounded-class" alt="${service.serviceName}">
               </div>
             </div>
           </div>
@@ -614,7 +614,7 @@ async function loadServices() {
 document.addEventListener("DOMContentLoaded", loadServices);
 
 
-const API = "https://ikya-backend-3.onrender.com/Services";
+const API = "https://ikya-backend-4.onrender.com/Services";
 
 
 async function loadPopularServices() {
@@ -631,7 +631,7 @@ const col = document.createElement("div");
 col.className = "col-md-4 col-sm-6";
 col.innerHTML = `
 <div class="department-box box-img-cnt">
-<div class="box-img"><img src="https://ikya-backend-3.onrender.com${service.image}" alt="${service.serviceName}"></div>
+<div class="box-img"><img src="https://ikya-backend-4.onrender.com${service.image}" alt="${service.serviceName}"></div>
 <div class="box-cnt">
 <h4>${service.serviceName}</h4>
 <p>${service.description.length > 80 ? service.description.substring(0, 80) + '...' : service.description}</p>
@@ -652,7 +652,7 @@ document.addEventListener("DOMContentLoaded", loadPopularServices);
 
 
 
- const chooseUs = "https://ikya-backend-3.onrender.com/WhyChooseUs";
+ const chooseUs = "https://ikya-backend-4.onrender.com/WhyChooseUs";
 
 document.addEventListener("DOMContentLoaded", loadChooseUs);
 
@@ -671,7 +671,7 @@ data.forEach((s) => {
         <div class="icon-wrapper me-3">
           ${
             s.icon
-              ? `<img src="https://ikya-backend-3.onrender.com${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
+              ? `<img src="https://ikya-backend-4.onrender.com${s.icon}" class="choose-icon" alt="${s.serviceName}"/>`
               : `<i class="zmdi zmdi-star default-icon"></i>`
           }
         </div>
@@ -695,7 +695,7 @@ data.forEach((s) => {
 
 
  
-const deptMenu = "https://ikya-backend-3.onrender.com/Specialities";
+const deptMenu = "https://ikya-backend-4.onrender.com/Specialities";
 
 document.addEventListener("DOMContentLoaded", () => {
     loadDepartments();

@@ -104,7 +104,7 @@
 </div>
 
 <script>
-  const API_BASE = "https://ikya-backend-3.onrender.com/doctors";
+  const API_BASE = "https://ikya-backend-4.onrender.com/doctors";
   let slots = [];
 
   function addSlot(){
@@ -171,7 +171,7 @@
             <td>${doc.email}</td><td>${doc.phone}</td><td>${doc.experience||""}</td><td>${doc.qualification||""}</td>
             <td>${doc.gender||""}</td><td>${doc.consultingFee||""}</td>
             <td style="white-space: pre-line;">${workingHours}</td><td>${doc.description||""}</td>
-            <td>${doc.profileImage?`<img src="https://ikya-backend-3.onrender.com${doc.profileImage}" width="50">`:""}</td>
+            <td>${doc.profileImage?`<img src="https://ikya-backend-4.onrender.com${doc.profileImage}" width="50">`:""}</td>
             <td>
               <button class="btn btn-sm btn-warning" onclick='editDoctor(${JSON.stringify(doc)})'><i class="fa fa-edit"></i></button>
               <button class="btn btn-sm btn-danger" onclick="deleteDoctor(${doc.doctorId})"><i class="fa fa-trash"></i></button>

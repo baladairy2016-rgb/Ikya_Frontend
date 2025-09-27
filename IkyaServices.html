@@ -82,7 +82,7 @@
 </div>
 
 <script>
-const API_BASE = "https://ikya-backend-3.onrender.com/Services";
+const API_BASE = "https://ikya-backend-4.onrender.com/Services";
 
 document.addEventListener("DOMContentLoaded", loadServices);
 
@@ -97,7 +97,7 @@ async function loadServices() {
       const desc = s.description.length > 80 ? s.description.substring(0, 80) + '...' : s.description;
       table.innerHTML += `
         <tr>
-          <td><img src="https://ikya-backend-3.onrender.com${s.image}" class="preview-img" alt=""></td>
+          <td><img src="https://ikya-backend-4.onrender.com${s.image}" class="preview-img" alt=""></td>
           <td>${s.serviceName}</td>
           <td title="${s.description}">${desc}</td>
           <td>${s.popularService == 1 ? '✅' : ''}</td>

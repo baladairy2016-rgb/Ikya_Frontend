@@ -181,7 +181,7 @@
 </div>
 
 <script>
-const apiBase = "https://ikya-backend-3.onrender.com/Slider";
+const apiBase = "https://ikya-backend-4.onrender.com/Slider";
 let editingSliderId = 0;
 
 // Preview image
@@ -215,7 +215,7 @@ async function loadSliders() {
         <td>${i + 1}</td>
         <td>${s.title}</td>
         <td>${s.subTitle || ""}</td>
-        <td><img src="https://ikya-backend-3.onrender.com${s.images}" alt="Slider" style="max-width:120px; border-radius:8px;"></td>
+        <td><img src="https://ikya-backend-4.onrender.com${s.images}" alt="Slider" style="max-width:120px; border-radius:8px;"></td>
         <td>${s.status}</td>
         <td>${createdDate}</td>
         <td><button class="action-btn edit" onclick="editSlider(${s.id})">Edit</button></td>
@@ -234,7 +234,7 @@ async function editSlider(id) {
 
   document.getElementById('title').value = slider.title;
   document.getElementById('subTitle').value = slider.subTitle;
-  document.getElementById("previewImg").src = `https://ikya-backend-3.onrender.com${slider.images}`;
+  document.getElementById("previewImg").src = `https://ikya-backend-4.onrender.com${slider.images}`;
   document.getElementById("previewImg").style.display = "block";
 
   document.querySelector('#sliderForm button').innerText = "Update Slider";

@@ -595,7 +595,7 @@
 
 
 
-const API_DOCTOR_DETAIL = "https://ikya-backend-3.onrender.com/doctors";
+const API_DOCTOR_DETAIL = "https://ikya-backend-4.onrender.com/doctors";
 
 const urlParams = new URLSearchParams(window.location.search);
 const doctorId = urlParams.get("id");
@@ -612,7 +612,7 @@ async function loadDoctorDetail() {
     // Fill content
     document.getElementById("doctorName").innerText = doc.doctorName || "";
     document.getElementById("doctorShortDesc").innerText = doc.shortDescription || "Description not available";
-    document.getElementById("doctorImage").src = doc.profileImage ? `https://ikya-backend-3.onrender.com${doc.profileImage}` : "assets/images/default-doctor.png";
+    document.getElementById("doctorImage").src = doc.profileImage ? `https://ikya-backend-4.onrender.com${doc.profileImage}` : "assets/images/default-doctor.png";
     document.getElementById("doctorLocation").innerText = doc.location || "Not specified";
     document.getElementById("doctorBio").innerText = doc.bio || "Biography not available";
 
