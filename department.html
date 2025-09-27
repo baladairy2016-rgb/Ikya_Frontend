@@ -514,8 +514,8 @@ padding-bottom: 20px;
 <script src="assets/js/app.js"></script><!-- my js -->
 
    <script>
-  const API_BASE = "http://localhost:8081/Specialities";
-  const DoctorApi = "http://localhost:8081/doctors";
+  const API_BASE = "https://ikya-backend-3.onrender.com/Specialities";
+  const DoctorApi = "https://ikya-backend-3.onrender.com/doctors";
 
   // Helper to get `id` from URL
   function getDepartmentId() {
@@ -546,7 +546,7 @@ padding-bottom: 20px;
       document.getElementById("deptDesc2").textContent = dept.description2 || "";
 
       if (dept.image) {
-        document.getElementById("deptImage").src = `http://localhost:8081${dept.image}`;
+        document.getElementById("deptImage").src = `https://ikya-backend-3.onrender.com${dept.image}`;
       }
 
       // After dept loaded → load doctors
@@ -582,7 +582,7 @@ padding-bottom: 20px;
           <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="team-box text-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="${3000 + i*500}">
               <div class="doctor-pic">
-                <img src="http://localhost:8081${doc.profileImage || '/assets/images/default-doctor.png'}" 
+                <img src="https://ikya-backend-3.onrender.com${doc.profileImage || '/assets/images/default-doctor.png'}" 
                      alt="${doc.doctorName}" style="height:250px; object-fit:cover;">
               </div>
               <div class="doctor-info">

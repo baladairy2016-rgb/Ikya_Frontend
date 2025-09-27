@@ -67,7 +67,7 @@
 </div>
 
 <script>
-const API_BASE = "http://localhost:8081/WhyChooseUs";
+const API_BASE = "https://ikya-backend-3.onrender.com/WhyChooseUs";
 
 document.addEventListener("DOMContentLoaded", loadServices);
 
@@ -82,7 +82,7 @@ async function loadServices() {
       const desc = s.description.length > 80 ? s.description.substring(0, 80) + '...' : s.description;
       table.innerHTML += `
         <tr>
-          <td>${s.icon ? `<img src="http://localhost:8081${s.icon}" class="preview-icon" alt="${s.serviceName}">` : ''}</td>
+          <td>${s.icon ? `<img src="https://ikya-backend-3.onrender.com${s.icon}" class="preview-icon" alt="${s.serviceName}">` : ''}</td>
           <td>${s.serviceName}</td>
           <td title="${s.description}">${desc}</td>
           <td>${s.createdOn ? new Date(s.createdOn).toLocaleDateString() : ''}</td>

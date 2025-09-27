@@ -185,7 +185,7 @@
 </div>
 
 <script>
-  const api = "http://localhost:8081/About";
+  const api = "https://ikya-backend-3.onrender.com/About";
 
   // Image preview
   document.getElementById("imageFile").addEventListener("change", (e) => {
@@ -218,7 +218,7 @@
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${i + 1}</td>
-        <td><img src="http://localhost:8081${s.image}" alt="${s.title}"></td>
+        <td><img src="https://ikya-backend-3.onrender.com${s.image}" alt="${s.title}"></td>
         <td>${s.title}</td>
         <td>${s.subTitle || ""}</td>
         <td>${s.description}</td>

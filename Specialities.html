@@ -74,7 +74,7 @@
 </div>
 
 <script>
-  const API_BASE = "http://localhost:8081/Specialities";
+  const API_BASE = "https://ikya-backend-3.onrender.com/Specialities";
 
   const iconFile = document.getElementById("iconFile");
   const imageFile = document.getElementById("imageFile");
@@ -107,9 +107,9 @@
         <tr>
           <td>${s.id}</td>
           <td>${s.title}</td>
-          <td>${s.icon ? `<img src="http://localhost:8081${s.icon}" class="file-preview">` : ""}</td>
-          <td>${s.image ? `<img src="http://localhost:8081${s.image}" class="file-preview">` : ""}</td>
-          <td>${s.image1 ? `<img src="http://localhost:8081${s.image1}" class="file-preview">` : ""}</td>
+          <td>${s.icon ? `<img src="https://ikya-backend-3.onrender.com${s.icon}" class="file-preview">` : ""}</td>
+          <td>${s.image ? `<img src="https://ikya-backend-3.onrender.com${s.image}" class="file-preview">` : ""}</td>
+          <td>${s.image1 ? `<img src="https://ikya-backend-3.onrender.com${s.image1}" class="file-preview">` : ""}</td>
           <td>${s.description || ""}</td>
           <td>${s.createdOn ? new Date(s.createdOn).toLocaleString() : ""}</td>
           <td>
@@ -129,9 +129,9 @@
     document.getElementById("title").value = s.title;
     document.getElementById("description").value = s.description || "";
 
-    if (s.icon) { iconPreview.src = `http://localhost:8081${s.icon}`; iconPreview.classList.remove("d-none"); }
-    if (s.image) { imagePreview.src = `http://localhost:8081${s.image}`; imagePreview.classList.remove("d-none"); }
-    if (s.image1) { image1Preview.src = `http://localhost:8081${s.image1}`; image1Preview.classList.remove("d-none"); }
+    if (s.icon) { iconPreview.src = `https://ikya-backend-3.onrender.com${s.icon}`; iconPreview.classList.remove("d-none"); }
+    if (s.image) { imagePreview.src = `https://ikya-backend-3.onrender.com${s.image}`; imagePreview.classList.remove("d-none"); }
+    if (s.image1) { image1Preview.src = `https://ikya-backend-3.onrender.com${s.image1}`; image1Preview.classList.remove("d-none"); }
   }
 
   async function deleteSpeciality(id) {

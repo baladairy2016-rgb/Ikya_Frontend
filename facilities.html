@@ -67,7 +67,7 @@
 </div>
 
 <script>
-  const API_BASE = "http://localhost:8081/facilities";
+  const API_BASE = "https://ikya-backend-3.onrender.com/facilities";
 
   // Preview images
   const imageFile = document.getElementById("imageFile");
@@ -102,8 +102,8 @@
           <tr>
             <td>${fac.id}</td>
             <td>${fac.title}</td>
-            <td>${fac.image ? `<img src="http://localhost:8081${fac.image}" class="file-preview">` : ""}</td>
-            <td>${fac.icon ? `<img src="http://localhost:8081${fac.icon}" class="file-preview">` : ""}</td>
+            <td>${fac.image ? `<img src="https://ikya-backend-3.onrender.com${fac.image}" class="file-preview">` : ""}</td>
+            <td>${fac.icon ? `<img src="https://ikya-backend-3.onrender.com${fac.icon}" class="file-preview">` : ""}</td>
             <td>${fac.createdOn || ""}</td>
             <td>
               <button class="btn btn-sm btn-warning me-1" onclick='editFacility(${JSON.stringify(fac)})'><i class="fa fa-edit"></i></button>
@@ -120,11 +120,11 @@
     document.getElementById("title").value = fac.title;
 
     if(fac.image){
-      imagePreview.src = `http://localhost:8081${fac.image}`;
+      imagePreview.src = `https://ikya-backend-3.onrender.com${fac.image}`;
       imagePreview.classList.remove("d-none");
     }
     if(fac.icon){
-      iconPreview.src = `http://localhost:8081${fac.icon}`;
+      iconPreview.src = `https://ikya-backend-3.onrender.com${fac.icon}`;
       iconPreview.classList.remove("d-none");
     }
   }
